@@ -80,7 +80,7 @@ export function TabSection() {
                 Find events and meetups happening in Calgary&apos;s tech
                 community. Explore opportunities to learn, connect, and
                 collaborate. Contact [contact info] if you have an event you
-                want added to the list.
+                want to add to the list.
               </p>
             </div>
             <Events />
@@ -88,7 +88,7 @@ export function TabSection() {
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-14">
               <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
-                Join an Online Community
+                Join a Community
               </h2>
               <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
                 Join the conversation and become part of our thriving tech
