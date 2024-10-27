@@ -31,10 +31,11 @@ export function TabSection() {
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
+
   return (
     <TabGroup
       className={
-        'z-50 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%]'
+        'relative z-50 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%]'
       }
     >
       <div
@@ -69,7 +70,7 @@ export function TabSection() {
           </TabList>
         </div>
       </div>
-      <div className="mx-10 xl:mx-auto lg:max-w-7xl bg-zinc-50 py-14 dark:bg-zinc-900">
+      <div className="mx-10 bg-zinc-50 py-14 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
         <TabPanels>
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-10">
