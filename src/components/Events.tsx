@@ -61,6 +61,10 @@ export default function Events() {
     return new Date(year, month, nthThursday);
   }
 
+  function getNextMonthDate(year: number, month: number) {
+    return new Date(year, month + 1, 0);
+  }
+
   useEffect(() => {
     const today = new Date()
     const year = today.getFullYear()
@@ -81,6 +85,9 @@ export default function Events() {
             const firstTuesday = getNthTuesday(year, month, 1).toLocaleDateString('en-GB', options)
             const thirdTuesday = getNthTuesday(year, month, 3).toLocaleDateString('en-GB', options)
             event.date = firstTuesday < new Date().toISOString() ? thirdTuesday : firstTuesday
+            break
+          case 'month':
+            event.date = getNextMonthDate(year, month).toLocaleDateString('en-GB', options)
             break
           default:
             break

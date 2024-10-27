@@ -23,7 +23,7 @@ export const HeroSection = () => {
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-28 pt-32 lg:mx-10 lg:py-0 lg:pb-48 xl:mx-auto">
-        <h1 className="max-w-2xl text-5xl md:text-6xl font-medium leading-[1.25em] tracking-tighter text-white lg:text-[6em]">
+        <h1 className="max-w-2xl text-5xl font-medium leading-[1.25em] tracking-tighter text-white md:text-6xl lg:text-[6em]">
           Be part of
         </h1>
         <ReactTyped
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           backSpeed={20}
           showCursor={true}
           cursorChar="|"
-          className="max-w-2xl text-5xl md:text-6xl font-bold leading-[1.25em] tracking-tighter text-red-500 text-[2.5em] md:text-[3.5em] lg:leading-10"
+          className="max-w-2xl text-5xl text-[2.5em] font-bold leading-[1.25em] tracking-tighter text-red-500 md:text-6xl md:text-[3.5em] lg:leading-10"
           loop
         >
           <span />
@@ -49,7 +49,7 @@ export const HeroSection = () => {
         </p>
         <Link href="/newsletter">
           <button className="mt-2 w-full rounded-full border-white bg-white p-3 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:text-white lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:text-black">
-            Sign Up
+            Stay in the Loop
           </button>
         </Link>
       </div>
