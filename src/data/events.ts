@@ -64,7 +64,7 @@ export const events = [
   },
   {
     name: 'Pixels and Pints | Monthly Meetup',
-    date: '2024-10-29',
+    date: '2024-10-30',
     venue: 'Bottlescrew Bills Pub',
     time: '6:00 PM',
     meetup: `https://www.meetup.com/yyc-dev`,
@@ -75,12 +75,12 @@ export const events = [
     },
     image: '/assets/images/pixels.jpg',
     badge: 'Popular',
-    recurrent: true,
-    every: 'monthly'
+    recurrent: false,
+    every: 'month'
   },
   {
     name: 'Google Developer Group | DEVFESTYYC 2024',
-    date: '2024-11-15',
+    date: '2024-11-16',
     venue: 'Platform Calgary',
     time: '10:45 AM',
     meetup: `https://www.meetup.com/gdgyyc/events/303553485`,
@@ -92,7 +92,7 @@ export const events = [
     image: 'https://cache.sessionize.com/image/ac14-1140o400o3-UchP7cRGP6BGxJjyBKWdjB.png',
     // badge: 'Popular',
     recurrent: true,
-    every: 'monthly'
+    every: 'month'
   },
   {
     name: 'Calgary Tech Talks | 4th Edition',
@@ -108,7 +108,7 @@ export const events = [
     image: '/assets/images/ctt.webp',
     // badge: 'Popular',
     recurrent: false,
-    every: 'monthly'
+    every: 'month'
   },
   {
     name: 'Calgary UX | Career Catalyst with MegaTech',
@@ -124,6 +124,6 @@ export const events = [
     image: '/assets/images/calgaryUX.webp',
     // badge: 'Popular',
     recurrent: false,
-    every: 'monthly'
+    every: 'month'
   },
 ]

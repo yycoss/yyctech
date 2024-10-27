@@ -12,7 +12,7 @@ export function HomeFooter() {
   };
 
   return (
-    <footer className="mx-5 border border-white xl:mx-0">
+    <footer className="mx-5 xl:mx-0">
       <div className="mx-auto max-w-[1260px] pb-10">
         <div className="flex items-center justify-between py-10">
           <ul className="flex flex-col gap-1 text-zinc-600 dark:text-zinc-500">

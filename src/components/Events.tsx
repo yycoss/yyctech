@@ -6,6 +6,7 @@ import { Card } from '@/components/Card'
 import { events } from '@/data/events'
 import { FaCalendar } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
+import { format } from 'date-fns'
 
 interface Event {
   name: string
@@ -62,7 +63,7 @@ export default function Events() {
   }
 
   function getNextMonthDate(year: number, month: number) {
-    return new Date(year, month + 1, 0);
+    return new Date(year, month + 1, );
   }
 
   useEffect(() => {
@@ -112,7 +113,6 @@ export default function Events() {
         (event) => {
           const date = new Date(event.date)
 
-          // if (event.date >= new Date().toISOString()) {
           return (
             <Card
               as="li"
@@ -141,11 +141,7 @@ export default function Events() {
                   <div className="flex w-full items-center gap-2">
                     <FaCalendar className="text-red-600 dark:text-zinc-50" />
                     <h3 className="w-full text-sm">
-                      {date.toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
-                      })}
+                      {date.toDateString()}
                     </h3>
                   </div>
                   <div className="flex w-full items-center gap-2">
