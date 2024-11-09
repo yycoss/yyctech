@@ -12,7 +12,7 @@ export function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 bg-transparent">
+    <header className="fixed left-0 right-0 top-0 z-50 bg-transparent navbar">
       <nav className="mx-4 lg:mx-10 lg:max-w-7xl xl:mx-auto">
         <div className="flex items-center justify-between py-4">
           <Link href={'/'}>
@@ -21,7 +21,7 @@ export function Header() {
               <span
                 className="font-black text-zinc-50 antialiased"
                 style={{
-                textShadow: `
+                  textShadow: `
                       -0.25px -0.25px 0 #4b5563,  
                       0.25px -0.25px 0 #4b5563,
                       -0.25px 0.25px 0 #4b5563,
