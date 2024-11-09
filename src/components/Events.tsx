@@ -6,7 +6,6 @@ import { Card } from '@/components/Card'
 import { events } from '@/data/events'
 import { FaCalendar } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
-import { format } from 'date-fns'
 
 interface Event {
   name: string
@@ -17,8 +16,9 @@ interface Event {
   description: string
   link: { href: string; label: string }
   image: string
-  badge: string
+  badge?: string | undefined
   recurrent?: boolean
+  every?: string | undefined
 }
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

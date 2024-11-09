@@ -15,6 +15,18 @@ interface Event {
   type: PlatformType
 }
 
+interface Volunteering  {
+  name: string
+  date: string
+  venue: string
+  time: string
+  meetup: string
+  description: string
+  link: { href: string; label: string }
+  image: string
+  badge?: string
+}
+
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -37,48 +49,50 @@ export default function Volunteering() {
       role="list"
       className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
-      {volunteering.map((item) => (
-        <Card
-          as="li"
-          key={item.name}
-          className="group hover:scale-[102%] hover:shadow-md"
-        >
-          {item.badge && (
-            <div className="absolute right-4 top-4 z-50 translate-x-6 rounded-lg bg-[#dd514c] px-2 text-[0.75em] font-semibold text-white opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
-              {item.badge}
-            </div>
-          )}
-          <div className="relative h-[180px] w-full overflow-hidden rounded-md">
-            <Image
-              src={item.image}
-              width={400}
-              height={300}
-              alt="community-image"
-              className="absolute left-0 top-0 h-full w-full object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[95%] dark:opacity-50"
-            />
-          </div>
-          <div className="px-4 opacity-60 group-hover:opacity-100">
-            <div className="mt-2 flex w-full flex-col items-center gap-1">
-              <h2 className="text-lg mt-3 font-semibold text-zinc-700 dark:text-zinc-100 w-full">
-                <Card.Link href={item.link.href}>{item.name}</Card.Link>
-              </h2>
-              <div className="flex w-full items-center gap-2">
-                <FaCalendar className='text-red-600 dark:text-zinc-50'/>
-                <h3 className="w-full text-sm">{item.date}</h3>
+      {volunteering.map(
+        (item: Volunteering) => (
+          <Card
+            as="li"
+            key={item.name}
+            className="group hover:scale-[102%] hover:shadow-md"
+          >
+            {item.badge && (
+              <div className="absolute right-4 top-4 z-50 translate-x-6 rounded-lg bg-[#dd514c] px-2 text-[0.75em] font-semibold text-white opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
+                {item.badge}
               </div>
-              <div className="flex w-full items-center gap-2">
-                <FaLocationDot className='text-red-600 dark:text-zinc-50'/>
-                <h3 className="w-full text-sm">{`${item.venue} @ ${item.time}`}</h3>
-              </div>
+            )}
+            <div className="relative h-[180px] w-full overflow-hidden rounded-md">
+              <Image
+                src={item.image}
+                width={400}
+                height={300}
+                alt="community-image"
+                className="absolute left-0 top-0 h-full w-full object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[95%] dark:opacity-50"
+              />
             </div>
-            <Card.Description>{item.description}</Card.Description>
-            <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{item.link.label}</span>
-            </p>
-          </div>
-        </Card>
-      ))}
+            <div className="px-4 opacity-60 group-hover:opacity-100">
+              <div className="mt-2 flex w-full flex-col items-center gap-1">
+                <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
+                  <Card.Link href={item.link.href}>{item.name}</Card.Link>
+                </h2>
+                <div className="flex w-full items-center gap-2">
+                  <FaCalendar className="text-red-600 dark:text-zinc-50" />
+                  <h3 className="w-full text-sm">{item.date}</h3>
+                </div>
+                <div className="flex w-full items-center gap-2">
+                  <FaLocationDot className="text-red-600 dark:text-zinc-50" />
+                  <h3 className="w-full text-sm">{`${item.venue} @ ${item.time}`}</h3>
+                </div>
+              </div>
+              <Card.Description>{item.description}</Card.Description>
+              <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{item.link.label}</span>
+              </p>
+            </div>
+          </Card>
+        ),
+      )}
     </ul>
   )
 }

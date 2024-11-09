@@ -6,22 +6,25 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   experimental: {
-    outputFileTracingIncludes: {
-      '/articles/*': ['./src/app/articles/**/*.mdx'],
-    },
+    // outputFileTracingIncludes: {
+    //   '/articles/*': ['./src/app/articles/**/*.mdx'],
+    // },
   },
   images: {
     domains: ['secure.meetupstatic.com', 'cache.sessionize.com'],
   },
 }
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-    providerImportSource: '@mdx-js/react',
-  },
-})
+// const withMDX = nextMDX({
+//   extension: /\.mdx?$/,
+//   options: {
+//     remarkPlugins: [remarkGfm],
+//     rehypePlugins: [rehypePrism],
+//     providerImportSource: '@mdx-js/react',
+//   },
+// })
 
-export default withMDX(nextConfig)
+// export default withMDX(nextConfig)
+
+export default nextConfig
+
