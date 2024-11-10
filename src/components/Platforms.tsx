@@ -33,16 +33,20 @@ export default function Platforms() {
   return (
     <ul
       role="list"
-      className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 antialiased"
+      className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
       {platforms.map((platform) => (
-        <Card as="li" key={platform.name} className="group hover:shadow-md hover:scale-[102%]">
+        <Card
+          as="li"
+          key={platform.name}
+          className="group hover:scale-[102%] hover:shadow-md"
+        >
           {platform.type && (
             <Image
-            src={platform.logo}
-            alt=""
-            className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full opacity-0 shadow-lg shadow-zinc-800/5 transition-all duration-300 group-hover:opacity-100"
-            unoptimized
+              src={platform.logo}
+              alt=""
+              className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full opacity-0 shadow-lg shadow-zinc-800/5 transition-all duration-300 group-hover:opacity-100"
+              unoptimized
             />
           )}
           <div className="relative h-[180px] w-full overflow-hidden rounded-md">
@@ -51,16 +55,16 @@ export default function Platforms() {
               width={400}
               height={300}
               alt="community-image"
-              className="absolute group-hover:scale-105 left-0 top-0 h-full w-full object-cover opacity-70 transition-all duration-300 group-hover:opacity-[95%] dark:opacity-50"
+              className="absolute left-0 top-0 h-full w-full object-cover opacity-70 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[95%] dark:opacity-50"
             />
           </div>
           <div className="px-4 opacity-60 group-hover:opacity-100">
-            <div className='flex w-full items-center gap-1 mt-2'>
-              <h2 className="text-l mt-3 font-semibold text-zinc-700 dark:text-zinc-100">
+            <div className="mt-5 flex w-full items-center gap-1">
+              <h2 className="text-l font-semibold text-zinc-700 dark:text-zinc-100">
                 <Card.Link href={platform.link.href}>{platform.name}</Card.Link>
               </h2>
               {platform.badge && (
-                <div className="rounded-lg bg-[#dd514c] opacity-0 -translate-x-6 group-hover:opacity-100 group-hover:translate-x-0 font-semibold px-2 text-[0.75em] text-white transition-all duration-200 ease-in-out">
+                <div className="-translate-x-6 rounded-lg bg-[#dd514c] px-2 py-1 text-[0.75em] font-semibold text-white opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
                   {platform.badge}
                 </div>
               )}

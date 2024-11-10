@@ -47,6 +47,7 @@ const AboutCard1 = ({
         width={750}
         height={490}
         quality={50}
+        priority
         alt="about-us"
         className="w-full rounded-l-2xl md:w-1/2 lg:w-2/3"
       />

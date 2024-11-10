@@ -54,6 +54,7 @@ const AboutCard2 = ({
       <Image
         src={image}
         width={750}
+        priority
         height={490}
         quality={50}
         alt="about-us"
