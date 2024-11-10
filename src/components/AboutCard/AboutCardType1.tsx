@@ -44,8 +44,9 @@ const AboutCard1 = ({
     >
       <Image
         src={image}
-        width={700}
-        height={600}
+        width={750}
+        height={490}
+        quality={50}
         alt="about-us"
         className="w-full rounded-l-2xl md:w-1/2 lg:w-2/3"
       />

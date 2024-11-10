@@ -134,7 +134,7 @@ export const platforms = [
     },
     logo: '',
     type: '',
-    image: '/assets/images/calgaryUx.webp',
+    image: '/assets/images/calgaryUx.jpg',
     badge: '',
   },
   {
