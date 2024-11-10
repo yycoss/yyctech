@@ -121,7 +121,7 @@ export const events = [
       href: 'https://www.meetup.com/calgaryux/events/304192410',
       label: 'Event Details',
     },
-    image: '/assets/images/calgaryUX.webp',
+    image: '/assets/images/calgaryUX.jpg',
     // badge: 'Popular',
     recurrent: false,
     every: 'month'
