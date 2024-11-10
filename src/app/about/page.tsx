@@ -11,7 +11,7 @@ const About = () => {
               enthusiasts, professionals, and newcomers in Calgary. Our goal is
               to showcase the tech scene in the city, bringing together people
               passionate about technology, innovation, and collaboration."
-          image="/assets/images/aboutUs1.jpg"
+          image="/assets/images/aboutUs1.jpeg"
           cardId="card-1"
         />
         <AboutCardType2
