@@ -39,23 +39,29 @@ const AboutCard1 = ({
 
   return (
     <div
-      className={`flex transition-all duration-500 ${isScrolled && 'blur-sm'}`}
-      id={cardId}
+      className={`flex flex-col transition-all duration-500 ${isScrolled && 'blur-sm'}`}
     >
-      <Image
-        src={image}
-        width={750}
-        height={490}
-        quality={50}
-        priority
-        alt="about-us"
-        className="w-full rounded-l-2xl md:w-1/2 lg:w-2/3"
-      />
-      <div className="flex flex-col justify-center rounded-r-2xl border-t border-r border-b border-zinc-300 p-6 dark:border-zinc-600">
-        <h1 className="text-[3.25em] font-bold text-red-500 dark:text-white mb-2">
+      <div className="flex-2 flex h-[400px]">
+        <Image
+          src={image}
+          width={750}
+          height={490}
+          quality={50}
+          priority
+          alt="about-us"
+          className="h-full w-full rounded-lg lg:rounded-3xl object-cover"
+        />
+      </div>
+      <div
+        id={cardId}
+        className="flex flex-1 flex-col justify-center py-4 lg:py-6 dark:border-zinc-600"
+      >
+        <h1 className="mb-1 lg:mb-4 text-2xl lg:text-[3.25em] font-bold text-red-500 dark:text-white">
           {title}
         </h1>
-        <p className="pl-1 text-xl font-light text-zinc-700 dark:text-zinc-400">{text}</p>
+        <p className="pl-1 text-md lg:text-xl font-light text-zinc-700 dark:text-zinc-400">
+          {text}
+        </p>
       </div>
     </div>
   )

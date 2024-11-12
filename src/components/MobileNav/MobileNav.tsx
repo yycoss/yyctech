@@ -9,7 +9,7 @@ export default function MobileNav() {
   return (
     <div className="ml-2 md:hidden">
       <PiList
-        className="z-50 cursor-pointer text-3xl text-white transition-transform duration-200 hover:scale-110"
+        className="z-50 cursor-pointer text-3xl dark:text-white transition-transform duration-200 hover:scale-110"
         onClick={() => setIsOpen(!isOpen)}
         size={36}
       />

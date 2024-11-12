@@ -3,8 +3,8 @@ import AboutCardType2 from '@/components/AboutCard/AboutCardType2'
 
 const About = () => {
   return (
-    <section className="flex justify-center py-48">
-      <div className="flex max-w-7xl flex-col items-center justify-center gap-14">
+    <section className="flex justify-center py-24">
+      <div className="px-4 lg:px-28 flex max-w-7xl flex-col items-center justify-center gap-14">
         <AboutCardType1
           title="Who are we?"
           text="We are a community-driven platform dedicated to connecting tech
