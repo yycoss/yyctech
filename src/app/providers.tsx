@@ -38,14 +38,18 @@ function ThemeWatcher() {
   return null
 }
 
-export const AppContext = createContext<{ previousPathname?: string }>({})
+export const AppContext = createContext<{
+  previousPathname?: string
+  stickyNavRef?: any
+}>({})
 
 export function Providers({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
   let previousPathname = usePrevious(pathname)
+  const stickyNavRef = useRef<HTMLDivElement>(null)
 
   return (
-    <AppContext.Provider value={{ previousPathname }}>
+    <AppContext.Provider value={{ previousPathname, stickyNavRef }}>
       <ThemeProvider attribute="class" disableTransitionOnChange>
         <ThemeWatcher />
         {children}

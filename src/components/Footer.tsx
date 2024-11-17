@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa6";
+import { usePathname } from 'next/navigation'
+
 
 export function Footer() {
   const scrollToTop = () => {
@@ -11,9 +13,14 @@ export function Footer() {
       behavior: 'smooth'
     });
   };
+  const path = usePathname();
+  const isHome = path === '/';
 
   return (
-    <footer className="mx-5 xl:mx-0">
+    <footer
+      className="mx-5 xl:mx-0"
+      style={isHome ? { display: 'none' } : { display: 'flex' }}
+    >
       <div className="mx-auto max-w-[1260px] pb-10">
         <div className="flex items-center justify-between py-10">
           <ul className="flex flex-col gap-1 text-zinc-600 dark:text-zinc-500">
@@ -70,16 +77,28 @@ export function Footer() {
             </Link>
             <div className="mt-4 flex gap-2">
               <Link href="https://twitter.com/yyctech">
-                <FaXTwitter size={24}  className="hover:text-red-500 hover:scale-105"/>
+                <FaXTwitter
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
               <Link href="https://linkedin.com/company/yyctech">
-                <FaLinkedin size={24} className="hover:text-red-500 hover:scale-105"/>
+                <FaLinkedin
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
               <Link href="https://instagram.com/yyctech">
-                <FaInstagram size={24} className="hover:text-red-500 hover:scale-105"/>
+                <FaInstagram
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
               <Link href="https://facebook.com/yyctech">
-                <FaFacebookSquare size={24} className="hover:text-red-500 hover:scale-105"/>
+                <FaFacebookSquare
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
             </div>
           </div>

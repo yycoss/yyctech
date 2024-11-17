@@ -51,7 +51,7 @@ export const HeroSection = () => {
           Let&apos;s build, ship, and grow together!
         </p>
         <Link href="/newsletter">
-          <button className="mt-2 w-full rounded-full bg-white p-3 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:text-white lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:text-black">
+          <button className="mt-2 w-full rounded-full bg-white p-3 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:text-white lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:font-semibold dark:hover:text-red-500 hover:tracking-widest">
             Stay in the Loop
           </button>
         </Link>

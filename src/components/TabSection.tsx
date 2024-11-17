@@ -1,5 +1,4 @@
 'use client'
-import { useRef } from 'react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import Events from './Events'
 import Platforms from './Platforms'
@@ -8,9 +7,11 @@ import { FaUsers } from 'react-icons/fa'
 import { FaHandHoldingHeart } from 'react-icons/fa'
 import { CgCalendarToday } from 'react-icons/cg'
 import { HomeFooter } from './HomePageFooter'
+import { useContext } from 'react'
+import { AppContext } from '../app/providers'
 
 export function TabSection() {
-  const stickyNavRef = useRef<HTMLDivElement>(null)
+  const { stickyNavRef } = useContext(AppContext)
   const tabStyle = `
       text-sm sm:text-md font-medium leading-5
       text-zinc-800 dark:text-zinc-100
@@ -31,16 +32,15 @@ export function TabSection() {
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
-
   return (
     <TabGroup
       className={
-        'relative z-50 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%]'
+        'bg-[#fafafa relative z-40 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'
       }
     >
       <div
         ref={stickyNavRef}
-        className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-zinc-100 px-6 md:px-12 lg:mx-auto lg:rounded-t-full dark:border-zinc-800 dark:bg-zinc-900"
+        className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-zinc-100 px-6 md:px-12 lg:mx-auto dark:border-zinc-800 dark:bg-zinc-900"
       >
         <div className="mx-auto max-w-7xl">
           <TabList className="flex pt-1">
@@ -70,7 +70,7 @@ export function TabSection() {
           </TabList>
         </div>
       </div>
-      <div className="mx-10 bg-zinc-50 py-14 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
+      <div className="z-40 mx-10 bg-zinc-50 py-14 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
         <TabPanels>
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-10">
