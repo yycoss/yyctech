@@ -35,7 +35,7 @@ export function TabSection() {
   return (
     <TabGroup
       className={
-        'bg-[#fafafa relative z-40 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'
+        'bg-[#fafafa] relative z-40 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'
       }
     >
       <div
@@ -47,7 +47,7 @@ export function TabSection() {
             <div className="flex flex-row gap-8">
               <Tab
                 onClick={handleTabClick}
-                className={`${tabStyle} pr-[0.2em] transition-all duration-200 hover:scale-105`}
+                className={`${tabStyle} pr-[0.5em] transition-all duration-200 hover:scale-105`}
               >
                 <CgCalendarToday className="h-5 w-5" />
                 <span>Events</span>
@@ -70,10 +70,10 @@ export function TabSection() {
           </TabList>
         </div>
       </div>
-      <div className="z-40 mx-10 bg-zinc-50 py-14 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
+      <div className="z-40 mx-10 bg-zinc-50 py-10 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
         <TabPanels>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-10">
+            <div className="mb-8 max-w-2xl px-3 pb-4">
               <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
                 Upcoming Events
               </h2>
@@ -87,7 +87,7 @@ export function TabSection() {
             <Events />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-14">
+            <div className="mb-8 max-w-2xl px-3 pb-4">
               <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
                 Join a Community
               </h2>
@@ -101,7 +101,7 @@ export function TabSection() {
             <Platforms />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-14">
+            <div className="mb-8 max-w-2xl px-3 pb-4">
               <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
                 Find Volunteer Opportunities
               </h2>
