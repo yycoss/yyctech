@@ -163,4 +163,30 @@ export const platforms = [
     image: '/assets/images/civic.jpg',
     badge: '',
   },
+  {
+    name: 'Elixir Calgary',
+    meetup: 'https://www.meetup.com/elixir-calgary',
+    description: "This is a group for Elixir developers and functional programming enthusiast. We host quarterly meetups with pizza, beer, and Elixir-related talks from our members.",
+    link: {
+      href: 'https://www.meetup.com/elixir-calgary/',
+      label: 'meetup.com/elixir-calgary',
+    },
+    logo: '',
+    type: '',
+    image: 'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
+    badge: 'Growing',
+  },
+  {
+    name: 'Hack The Box Calgary',
+    meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
+    description: "Anyone who is interested in cybersecurity and penetration testing should join this group. Meet other infosec enthusiasts and exchange knowledge",
+    link: {
+      href: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca/',
+      label: 'www.meetup.com/hack-the-box-meetup-calgary-ca',
+    },
+    logo: '',
+    type: '',
+    image: 'https://secure.meetupstatic.com/photos/event/8/2/a/7/clean_522693447.webp',
+    badge: 'New',
+  },
 ]

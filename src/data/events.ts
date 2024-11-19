@@ -1,7 +1,7 @@
 export const events = [
   {
     name: 'YYC Dev Social | Bring Your Laptop and Code',
-    date: '2024-10-15',
+    date: '2024-11-19',
     venue: 'Bottlescrew Bills Pub',
     time: '6:00 PM',
     meetup: `https://www.meetup.com/yyc-dev`,
@@ -12,7 +12,7 @@ export const events = [
     },
     image: '/assets/images/bottlescrew.jpg',
     // badge: 'Popular',
-    recurrent: true,
+    recurrent: false,
     every: '1st and 3rd tuesday'
   },
   {
@@ -33,67 +33,67 @@ export const events = [
   },
   {
     name: 'SDC | Project-based Hackathon',
-    date: '2024-10-26',
+    date: '2024-11-30',
     venue: 'Central Library',
     time: '6:00 PM',
     meetup: `https://www.meetup.com/yyc-dev`,
     description: "Software Devs of Calgary 'mini-hackathon'. We code from 10 AM to about 4:00 PM at which point we do a little show-and-tell where you are welcome to demo what you did that day (totally optional)",
     link: {
-      href: 'https://www.meetup.com/software-developers-of-calgary/events/299214165',
+      href: 'https://www.meetup.com/software-developers-of-calgary/events/299214199',
       label: 'Event Details',
     },
     image: '/assets/images/centralLibrary.jpg',
     badge: 'New',
-    recurrent: true,
+    recurrent: false,
     every: 'month'
   },
+  // {
+  //   name: 'CSC | Global Day of Coderetreat',
+  //   date: '2024-11-09',
+  //   venue: 'Central Library',
+  //   time: '9:30 PM',
+  //   meetup: `https://www.meetup.com/calgary-software-crafters`,
+  //   description: "Join a group of awesome developers who will be participating in this worldwide event dedicated to practising the fundamentals of software development and design. We'll walk you through it all.",
+  //   link: {
+  //     href: 'https://www.meetup.com/calgary-software-crafters/events/303770752',
+  //     label: 'Event Details',
+  //   },
+  //   image: 'https://secure.meetupstatic.com/photos/event/a/3/4/a/600_516521802.webp?w=750',
+  //   // badge: 'Popular',
+  //   recurrent: false,
+  // },
   {
-    name: 'CSC | Global Day of Coderetreat',
-    date: '2024-11-09',
-    venue: 'Central Library',
-    time: '9:30 PM',
-    meetup: `https://www.meetup.com/calgary-software-crafters`,
-    description: "Join a group of awesome developers who will be participating in this worldwide event dedicated to practising the fundamentals of software development and design. We'll walk you through it all.",
-    link: {
-      href: 'https://www.meetup.com/calgary-software-crafters/events/303770752',
-      label: 'Event Details',
-    },
-    image: 'https://secure.meetupstatic.com/photos/event/a/3/4/a/600_516521802.webp?w=750',
-    // badge: 'Popular',
-    recurrent: false,
-  },
-  {
-    name: 'Pixels and Pints | Monthly Meetup',
-    date: '2024-10-30',
+    name: 'Pixels and Pints | 15th Annivesary',
+    date: '2024-11-26',
     venue: 'Bottlescrew Bills Pub',
     time: '6:00 PM',
     meetup: `https://www.meetup.com/yyc-dev`,
     description: "For fourteen years, Calgary's best and brightest in tech and digital design have been meeting for drinks. Sometimes there's cake.",
     link: {
-      href: 'https://www.meetup.com/pxandpints/events/303021130',
+      href: 'https://www.meetup.com/pxandpints/events/303021148',
       label: 'Event Details',
     },
     image: '/assets/images/pixels.jpg',
     badge: 'Popular',
     recurrent: false,
-    every: 'month'
+    every: ''
   },
-  {
-    name: 'Google Developer Group | DEVFESTYYC 2024',
-    date: '2024-11-16',
-    venue: 'Platform Calgary',
-    time: '10:45 AM',
-    meetup: `https://www.meetup.com/gdgyyc/events/303553485`,
-    description: "Get hands-on with Google’s cutting-edge Generative AI, Cloud, Mobile and Web platforms and technologies built for developers",
-    link: {
-      href: 'https://www.meetup.com/gdgyyc/events/303553485',
-      label: 'Event Details',
-    },
-    image: 'https://cache.sessionize.com/image/ac14-1140o400o3-UchP7cRGP6BGxJjyBKWdjB.png',
-    // badge: 'Popular',
-    recurrent: true,
-    every: 'month'
-  },
+  // {
+  //   name: 'Google Developer Group | DEVFESTYYC 2024',
+  //   date: '2024-11-16',
+  //   venue: 'Platform Calgary',
+  //   time: '10:45 AM',
+  //   meetup: `https://www.meetup.com/gdgyyc/events/303553485`,
+  //   description: "Get hands-on with Google’s cutting-edge Generative AI, Cloud, Mobile and Web platforms and technologies built for developers",
+  //   link: {
+  //     href: 'https://www.meetup.com/gdgyyc/events/303553485',
+  //     label: 'Event Details',
+  //   },
+  //   image: 'https://cache.sessionize.com/image/ac14-1140o400o3-UchP7cRGP6BGxJjyBKWdjB.png',
+  //   // badge: 'Popular',
+  //   recurrent: false,
+  //   every: 'month'
+  // },
   {
     name: 'Calgary Tech Talks | 4th Edition',
     date: '2024-11-25',
@@ -111,17 +111,33 @@ export const events = [
     every: 'month'
   },
   {
-    name: 'Calgary UX | Career Catalyst with MegaTech',
-    date: '2024-11-25',
-    venue: 'Platform Calgary',
-    time: '8:30 PM',
+    name: 'Calgary UX | Insights from Industry and Academia',
+    date: '2024-11-19',
+    venue: 'J5 Design',
+    time: '5:30 PM',
     meetup: `https://www.meetup.com/calgaryux/events/304192410`,
-    description: "Calgary UX is happy to be part of the next MegaTech Association event! Join us for Career Catalyst, an event designed to accelerate your career growth in the tech industry.",
+    description: "Join us at the beautiful J5 Design Calgary office for an insightful event exploring the diverse pathways to UX leadership in both industry and academia.",
     link: {
-      href: 'https://www.meetup.com/calgaryux/events/304192410',
+      href: 'https://www.meetup.com/calgaryux/events/304422720',
       label: 'Event Details',
     },
-    image: '/assets/images/calgaryUx.jpg',
+    image: 'https://secure.meetupstatic.com/photos/event/9/c/d/6/600_524560150.webp?w=750',
+    // badge: 'Popular',
+    recurrent: false,
+    every: 'month'
+  },
+  {
+    name: 'Elixir | November Meetup',
+    date: '2024-11-20',
+    venue: 'RBC Calgary Innovation Lab',
+    time: '6:00 PM',
+    meetup: `https://www.meetup.com/calgaryux/events/304192410`,
+    description: "Calling all Calgary Elixir Developers and FP Enthusiasts, let's get together for an evening of Elixir, pizza, and some great tech talks from members of our community!",
+    link: {
+      href: 'https://www.meetup.com/elixir-calgary/events/304260959',
+      label: 'Event Details',
+    },
+    image: 'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
     // badge: 'Popular',
     recurrent: false,
     every: 'month'

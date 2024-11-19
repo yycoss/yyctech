@@ -53,17 +53,17 @@ export default function Events() {
 
   function getNthThursday(year: number, month: number, n: number) {
     // Start with the first day of the month
-    const firstDayOfMonth = new Date(year, month, 1);
+    const firstDayOfMonth = new Date(year, month, 1)
     // Find the first Thursday of the month
-    const dayOfWeek = firstDayOfMonth.getDay();
-    const daysUntilThursday = (11 - dayOfWeek) % 7; // Ensures the next Thursday
+    const dayOfWeek = firstDayOfMonth.getDay()
+    const daysUntilThursday = (11 - dayOfWeek) % 7 // Ensures the next Thursday
     // Calculate the Nth Thursday (1st Thursday + (n - 1) weeks)
-    const nthThursday = 1 + daysUntilThursday + (n - 1) * 7;
-    return new Date(year, month, nthThursday);
+    const nthThursday = 1 + daysUntilThursday + (n - 1) * 7
+    return new Date(year, month, nthThursday)
   }
 
   function getNextMonthDate(year: number, month: number) {
-    return new Date(year, month + 1, );
+    return new Date(year, month + 1)
   }
 
   useEffect(() => {
@@ -77,18 +77,39 @@ export default function Events() {
     }
 
     const updatedEvents = events.map((event, i) => {
-      if ((event.date < new Date().toISOString() || !event.date) && event.recurrent) {
+      if (
+        (event.date < new Date().toISOString() || !event.date) &&
+        event.recurrent
+      ) {
         switch (event.every) {
           case '3rd thursday':
-            event.date = getNthThursday(year, month, 3).toLocaleDateString('en-GB', options)
+            event.date = new Date(
+              getNthThursday(year, month - 1, 3).setDate(
+                getNthThursday(year, month - 1, 3).getDate() - 1,
+              ),
+            ).toLocaleDateString('en-GB', options)
             break
           case '1st and 3rd tuesday':
-            const firstTuesday = getNthTuesday(year, month, 1).toLocaleDateString('en-GB', options)
-            const thirdTuesday = getNthTuesday(year, month, 3).toLocaleDateString('en-GB', options)
-            event.date = firstTuesday < new Date().toISOString() ? thirdTuesday : firstTuesday
+            const firstTuesday = getNthTuesday(
+              year,
+              month,
+              1,
+            ).toLocaleDateString('en-GB', options)
+            const thirdTuesday = getNthTuesday(
+              year,
+              month,
+              3,
+            ).toLocaleDateString('en-GB', options)
+            event.date =
+              firstTuesday < new Date().toISOString()
+                ? thirdTuesday
+                : firstTuesday
             break
           case 'month':
-            event.date = getNextMonthDate(year, month).toLocaleDateString('en-GB', options)
+            event.date = getNextMonthDate(year, month).toLocaleDateString(
+              'en-GB',
+              options,
+            )
             break
           default:
             break
@@ -130,7 +151,7 @@ export default function Events() {
                   width={400}
                   height={300}
                   alt="community-image"
-                  className="absolute left-0 top-0 h-full w-full object-cover opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[95%] dark:opacity-50"
+                  className="absolute left-0 top-0 h-full w-full object-cover opacity-85 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[100%] dark:opacity-50"
                 />
               </div>
               <div className="px-4 opacity-60 group-hover:opacity-100">
@@ -141,7 +162,9 @@ export default function Events() {
                   <div className="flex w-full items-center gap-2">
                     <FaCalendar className="text-red-600 dark:text-zinc-50" />
                     <h3 className="w-full text-sm">
-                      {date.toDateString()}
+                      {new Date(
+                        date.setDate(date.getDate() + 1),
+                      ).toDateString()}
                     </h3>
                   </div>
                   <div className="flex w-full items-center gap-2">

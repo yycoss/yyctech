@@ -1,44 +1,46 @@
 export const volunteering = [
-    {
-      name: 'Volunteering Option 1',
-      date: '15th November 2024',
-      venue: 'Calgary Central Library',
-      time: '10:00 AM',
-      meetup: `https://www.meetup.com/yyc-dev`,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec nisl nec nisl tincidunt ultricies. Nullam nec nisl nec nisl tincidunt ultricies.",
-      link: {
-        href: 'https://app.slack.com/client/T0L1HJC8J/C07QYKXS9T9',
-        label: 'Event Details',
-      },
-      image: '/assets/images/volunteering1.jpg',
-      // badge: 'Popular',
+  {
+    name: 'Calgart Public Library | Tech Mentor',
+    date: '15th November 2024',
+    venue: 'Calgary Public Library',
+    time: '(1 to 2 hours)',
+    meetup: `https://www.meetup.com/yyc-dev`,
+    description:
+      'Volunteers help Library patrons learn and practice computer skills in a one-on-one environment, including (but not limited to) the use of the Internet, software applications, coding, social media, and mobile devices. ',
+    link: {
+      href: 'https://www.calgarylibrary.ca/your-library/volunteer/adult-volunteers/tech-mentors',
+      label: 'More Details',
     },
-    {
-      name: 'Volunteering Option 2',
-      date: '17th December 2024',
-      venue: 'University of Calgary',
-      time: '2:00 PM',
-      meetup: `https://www.meetup.com/calgary-game-developers`,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec nisl nec nisl tincidunt ultricies. Nullam nec nisl nec nisl tincidunt ultricies.",
-      link: {
-        href: 'https://app.slack.com/client/T0L1HJC8J/C07QYKXS9T9',
-        label: 'Event Details',
-      },
-      image: '/assets/images/volunteering2.jpg',
-      // badge: 'Popular',
+    image: '/assets/images/volunteering2.jpg',
+    // badge: 'Popular',
+  },
+  {
+    name: 'Code the Change YYC | Volunteer',
+    date: '17th December 2024',
+    venue: 'University of Calgary',
+    time: '',
+    meetup: `https://www.meetup.com/calgary-game-developers`,
+    description: 'Code the change yyc is a Calgary-based initiative where students with a passion for technology volunteer their time to work on projects for non-profit causes as a way to grow their skills and give back to the community.',
+    link: {
+      href: 'https://www.codethechangeyyc.ca/join',
+      label: 'More Details',
     },
-    {
-      name: 'Volunteering Option 3',
-      date: '28th December 2024',
-      venue: 'Platform Calgary',
-      time: '3:00 PM',
-      meetup: `https://www.meetup.com/yyc-dev`,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas tincidunt. Nullam nec nisl nec nisl tincidunt ultricies. Nullam nec nisl nec nisl tincidunt ultricies.",
-      link: {
-        href: 'https://app.slack.com/client/T0L1HJC8J/C07QYKXS9T9',
-        label: 'Event Details',
-      },
-      image: '/assets/images/volunteering3.jpg',
-      // badge: 'New',
+    image: '/assets/images/ctc.png',
+    // badge: 'Popular',
+  },
+  {
+    name: 'Volunteer at Platform Calgary',
+    date: '28th December 2024',
+    venue: 'Platform Calgary',
+    time: '',
+    meetup: `https://www.meetup.com/yyc-dev`,
+    description:
+      "We've heard the ask and we're excitedly working to launch a community volunteer network to provide opportunities for you to give back to the community, apply your skills and talents, and support the tech ecosystem.",
+    link: {
+      href: 'https://www.platformcalgary.com/community/volunteer-at-platform-calgary',
+      label: 'More Details',
     },
+    image: '/assets/images/volunteering3.jpg',
+    // badge: 'New',
+  },
 ]

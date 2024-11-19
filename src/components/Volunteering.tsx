@@ -75,13 +75,13 @@ export default function Volunteering() {
                 <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
                   <Card.Link href={item.link.href}>{item.name}</Card.Link>
                 </h2>
-                <div className="flex w-full items-center gap-2">
+                {/* <div className="flex w-full items-center gap-2">
                   <FaCalendar className="text-red-600 dark:text-zinc-50" />
                   <h3 className="w-full text-sm">{item.date}</h3>
-                </div>
+                </div> */}
                 <div className="flex w-full items-center gap-2">
                   <FaLocationDot className="text-red-600 dark:text-zinc-50" />
-                  <h3 className="w-full text-sm">{`${item.venue} @ ${item.time}`}</h3>
+                  <h3 className="w-full text-sm">{`${item.venue} ${item.time}`}</h3>
                 </div>
               </div>
               <Card.Description>{item.description}</Card.Description>
