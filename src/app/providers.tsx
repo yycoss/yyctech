@@ -45,7 +45,7 @@ export const AppContext = createContext<{
 
 export function Providers({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
-  let previousPathname = usePrevious(pathname)
+  let previousPathname = usePrevious(pathname) ?? undefined
   const stickyNavRef = useRef<HTMLDivElement>(null)
 
   return (

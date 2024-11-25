@@ -2,7 +2,7 @@ import Airtable from 'airtable';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 Airtable.configure({
-  apiKey: process.env.NEXT_PUBLIC_AIRTABLE_PAT, // Replace with your actual PAT
+  apiKey: process.env.NEXT_PUBLIC_AIRTABLE_PAT,
 });
 
 const base = Airtable.base('appGlmVhCtwpaWiJg');
