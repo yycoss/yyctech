@@ -179,7 +179,7 @@ export const platforms = [
   {
     name: 'Hack The Box Calgary',
     meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
-    description: "Anyone who is interested in cybersecurity and penetration testing should join this group. Meet other infosec enthusiasts and exchange knowledge",
+    description: "Anyone who is interested in cybersecurity and penetration testing should join this group. Meet other infosec enthusiasts and exchange knowledge.",
     link: {
       href: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca/',
       label: 'www.meetup.com/hack-the-box-meetup-calgary-ca',
@@ -187,6 +187,19 @@ export const platforms = [
     logo: '',
     type: '',
     image: 'https://secure.meetupstatic.com/photos/event/8/2/a/7/clean_522693447.webp',
+    badge: 'New',
+  },
+  {
+    name: 'Tech Connect Alberta',
+    meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
+    description: "We celebrate all facets of the tech industry – whether you're a skilled IT guru, a software engineer, a sales whiz, or a customer support pro.",
+    link: {
+      href: 'https://discord.com/invite/55UZDP7MNv',
+      label: 'Discord',
+    },
+    logo: discordLogo,
+    type: 'discord',
+    image: '/assets/images/techConnect.jpeg',
     badge: 'New',
   },
 ]

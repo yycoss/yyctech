@@ -21,7 +21,7 @@ export function Footer() {
       className="mx-5 xl:mx-0"
       style={isHome ? { display: 'none' } : { display: 'flex' }}
     >
-      <div className="mx-auto max-w-[1260px] pb-10">
+      <div className="mx-auto w-[1260px] pb-10">
         <div className="flex items-center justify-between py-10">
           <ul className="flex flex-col gap-1 text-zinc-600 dark:text-zinc-500">
             <h2 className="text-xl font-semibold text-zinc-800 dark:text-zinc-400">
