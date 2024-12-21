@@ -25,8 +25,6 @@ export default async function handler(req: any, res: any) {
   
       const tokenData = await tokenResponse.json();
 
-      console.log('TOKEN DATA --->', tokenData);
-
       res.status(200).json(tokenData); // Access token is included in this response
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';

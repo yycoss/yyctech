@@ -8,7 +8,7 @@ export default async function handler(req: any, res: any) {
     }
   
     try {
-      const response = await fetch(`https://api.meetup.com/pxandpints/events`, {
+      const response = await fetch(`https://api.meetup.com/yyctech/events`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
