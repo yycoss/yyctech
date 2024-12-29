@@ -33,6 +33,7 @@ export const platforms = [
     badge: 'Featured',
   },
   {
+    id: '2726362',
     name: 'YYC Design & Development',
     meetup: 'https://www.meetup.com/yyc-dev',
     description:
@@ -73,7 +74,7 @@ export const platforms = [
   },
   {
     name: 'Software Developers of Calgary',
-    meetup: 'https://www.meetup.com/pxandpints',
+    meetup: 'https://www.meetup.com/software-developers-of-calgary',
     description:
       'Where people can come and work on their own projects, or band together with others. Or just come and learn a new language or framework.',
     link: {
@@ -201,7 +202,7 @@ export const platforms = [
   },
   {
     name: 'Tech Connect Alberta',
-    meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
+    meetup: 'https://www.meetup.com/tech-connect-ab',
     description:
       "We celebrate all facets of the tech industry – whether you're a skilled IT guru, a software engineer, a sales whiz, or a customer support pro.",
     link: {

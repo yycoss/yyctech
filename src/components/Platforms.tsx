@@ -1,9 +1,8 @@
-import { type Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
+import { type Metadata } from 'next'
 import { Card } from '@/components/Card'
 import { platforms } from '@/data/platforms'
-
-type PlatformType = 'slack' | 'discord'
 
 interface Platform {
   briefDrescription: any
@@ -13,7 +12,7 @@ interface Platform {
   description: string
   link: { href: string; label: string }
   logo: any
-  type: PlatformType
+  type: string
 }
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -29,21 +28,21 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Platforms',
-  description: 'Online communities for tech enthusiasts in Calgary.',
+  description: 'Communities for tech enthusiasts in Calgary.',
 }
 
 export default function Platforms(groups: { groups: { communities: Record<string, Platform> } }) {
-  let data = groups;
+  const data = groups;
   const communities = Object.entries(data.groups.communities);
 
   for (let i = 0; i < communities.length; i++) {
     const currentPlatform = platforms.find(item => item.id === (communities[i][1] as any).id);
     if (currentPlatform) {
-      (communities[i][1] as any).logo = currentPlatform.logo;
-      (communities[i][1] as any).type = currentPlatform.type;
-      (communities[i][1] as any).badge = currentPlatform.badge;
-      (communities[i][1] as any).link = currentPlatform.link;
-      (communities[i][1] as any).briefDrescription = currentPlatform.description;
+      (communities[i][1] as Platform).logo = currentPlatform.logo;
+      (communities[i][1] as Platform).type = currentPlatform.type;
+      (communities[i][1] as Platform).badge = currentPlatform.badge;
+      (communities[i][1] as Platform).link = currentPlatform.link;
+      (communities[i][1] as Platform).briefDrescription = currentPlatform.description;
     }
   }``
 
@@ -52,7 +51,8 @@ export default function Platforms(groups: { groups: { communities: Record<string
       role="list"
       className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
-      {communities.map((group) => (
+      {communities.map((group, index) => (
+        <Link key={index} href={group[1].link.href} target="_blank">
          <Card
            as="li"
            key={group[1].name}
@@ -87,12 +87,13 @@ export default function Platforms(groups: { groups: { communities: Record<string
                )}
              </div>
              <Card.Description>{group[1].briefDrescription}</Card.Description>
-             {/* <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
+             <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
                <LinkIcon className="h-6 w-6 flex-none" />
                <span className="ml-2">{group[1].link.label}</span>
-             </p> */}
+             </p>
            </div>
          </Card>
+         </Link>
       ))}
     </ul>
   )

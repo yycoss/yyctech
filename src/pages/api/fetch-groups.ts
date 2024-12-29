@@ -1,13 +1,25 @@
 export default async function handler(req: any, res: any) {
-    const accessToken = req.headers.authorization?.split(' ')[1]; // Extract access token
+    const accessToken = req.headers.authorization?.split(' ')[1];
 
-    console.log({accessToken});
-
-    if (!accessToken) {
-      return res.status(401).json({ error: 'Access token missing' });
-    }
+    if (!accessToken) return res.status(401).json({ error: 'Access token missing' });
   
-    const groupNames = ["pxandpints", "calgary-game-developers", "yyc-dev"];
+    const groupNames = [
+      'pxandpints',
+      'calgary-game-developers',
+      'yyc-dev',
+      'calgary-tech-hikes',
+      'calgary-software-crafters',
+      'software-developers-of-calgary',
+      'gdgyyc',
+      'calgary-tech-talks1',
+      'the-test-tribe-calgary',
+      'calgaryux',
+      'wtd-calgary',
+      'civictechyyc-tech-for-good',
+      'elixir-calgary',
+      'hack-the-box-meetup-calgary-ca',
+      'tech-connect-ab',
+    ]
 
     // Generate the dynamic GraphQL query
     const query = `
