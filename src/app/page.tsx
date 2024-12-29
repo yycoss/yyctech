@@ -7,7 +7,7 @@ async function fetchCommunities() {
     headers: {
       Authorization: `Bearer YOUR_ACCESS_TOKEN`,
     },
-    cache: 'force-cache',
+    cache: 'no-cache',
   })
 
   if (!response.ok) {

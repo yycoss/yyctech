@@ -3,6 +3,22 @@ import discordLogo from '@/images/logos/discord.webp'
 
 export const platforms = [
   {
+    id: '1539617',
+    name: 'Pixels & Pints 🍻',
+    meetup: 'https://www.meetup.com/pxandpints',
+    description:
+      'Venue for developers and creatives to sit down, relax and talk shop. There are no presentations or pre-defined discussion topics; just a few pints and good conversation.',
+    link: {
+      href: 'https://discord.com/channels/707420581955371038/707634908373319760',
+      label: 'Discord Server',
+    },
+    logo: discordLogo,
+    type: 'discord',
+    image: '/assets/images/pixels.jpg',
+    badge: 'Popular',
+  },
+  {
+    id: '8307592',
     name: 'Calgary Game Developers',
     meetup: `https://www.meetup.com/calgary-game-developers`,
     description:
@@ -30,7 +46,8 @@ export const platforms = [
   {
     name: 'Calgary Tech Hikes',
     meetup: 'https://www.meetup.com/calgary-tech-hikes',
-    description: "A group for folks working in tech in Calgary to get out hiking in the mountains together. Software developers, hardware engineers, product people, and founders.",
+    description:
+      'A group for folks working in tech in Calgary to get out hiking in the mountains together. Software developers, hardware engineers, product people, and founders.',
     link: {
       href: 'https://www.meetup.com/calgary-tech-hikes',
       label: 'meetup.com/calgary-tech-hikes',
@@ -53,21 +70,6 @@ export const platforms = [
     type: 'discord',
     image: '/assets/images/softwareCrafters.jpg',
     badge: 'Recommended',
-  },
-  {
-    id: "1539617",
-    name: 'Pixels & Pints',
-    meetup: 'https://www.meetup.com/pxandpints',
-    description:
-      'Venue for developers and creatives to sit down, relax and talk shop. There are no presentations or pre-defined discussion topics; just a few pints and good conversation',
-    link: {
-      href: 'https://discord.com/channels/707420581955371038/707634908373319760',
-      label: 'Discord Server',
-    },
-    logo: discordLogo,
-    type: 'discord',
-    image: '/assets/images/pixels.jpg',
-    badge: '',
   },
   {
     name: 'Software Developers of Calgary',
@@ -128,7 +130,8 @@ export const platforms = [
   {
     name: 'Calgary UX',
     meetup: 'https://www.meetup.com/calgaryux',
-    description: "The Calgary UX is a community that aims to create a safe and welcoming environment for all attendees. Together, we connect people, celebrate talent and share knowledge.",
+    description:
+      'The Calgary UX is a community that aims to create a safe and welcoming environment for all attendees. Together, we connect people, celebrate talent and share knowledge.',
     link: {
       href: 'https://calgaryux.com',
       label: 'calgaryux.com',
@@ -141,7 +144,8 @@ export const platforms = [
   {
     name: 'Write the Docs Calgary',
     meetup: 'https://www.meetup.com/wtd-calgary',
-    description: "A group focused on documentation, technical writing and information delivery. Whether you are a technical writer, information developer or a programmer.",
+    description:
+      'A group focused on documentation, technical writing and information delivery. Whether you are a technical writer, information developer or a programmer.',
     link: {
       href: 'https://www.writethedocs.org/meetups/index.html',
       label: 'writethedocs.org/meetups',
@@ -154,7 +158,8 @@ export const platforms = [
   {
     name: 'CivicTech YYC - Tech for Good',
     meetup: 'https://www.meetup.com/civictechyyc-tech-for-good',
-    description: "We are passionate volunteers who come together to conceptualize and engage on projects that serve to make Calgary an even better place to live.",
+    description:
+      'We are passionate volunteers who come together to conceptualize and engage on projects that serve to make Calgary an even better place to live.',
     link: {
       href: 'https://www.meetup.com/civictechyyc-tech-for-good',
       label: 'meetup.com/civictechyyc-tech-for-good',
@@ -167,33 +172,38 @@ export const platforms = [
   {
     name: 'Elixir Calgary',
     meetup: 'https://www.meetup.com/elixir-calgary',
-    description: "This is a group for Elixir developers and functional programming enthusiast. We host quarterly meetups with pizza, beer, and Elixir-related talks from our members.",
+    description:
+      'This is a group for Elixir developers and functional programming enthusiast. We host quarterly meetups with pizza, beer, and Elixir-related talks from our members.',
     link: {
       href: 'https://www.meetup.com/elixir-calgary/',
       label: 'meetup.com/elixir-calgary',
     },
     logo: '',
     type: '',
-    image: 'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
+    image:
+      'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
     badge: 'Growing',
   },
   {
     name: 'Hack The Box Calgary',
     meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
-    description: "Anyone who is interested in cybersecurity and penetration testing should join this group. Meet other infosec enthusiasts and exchange knowledge.",
+    description:
+      'Anyone who is interested in cybersecurity and penetration testing should join this group. Meet other infosec enthusiasts and exchange knowledge.',
     link: {
       href: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca/',
       label: 'www.meetup.com/hack-the-box-meetup-calgary-ca',
     },
     logo: '',
     type: '',
-    image: 'https://secure.meetupstatic.com/photos/event/8/2/a/7/clean_522693447.webp',
+    image:
+      'https://secure.meetupstatic.com/photos/event/8/2/a/7/clean_522693447.webp',
     badge: 'New',
   },
   {
     name: 'Tech Connect Alberta',
     meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
-    description: "We celebrate all facets of the tech industry – whether you're a skilled IT guru, a software engineer, a sales whiz, or a customer support pro.",
+    description:
+      "We celebrate all facets of the tech industry – whether you're a skilled IT guru, a software engineer, a sales whiz, or a customer support pro.",
     link: {
       href: 'https://discord.com/invite/55UZDP7MNv',
       label: 'Discord',

@@ -1,14 +1,14 @@
 export default async function handler(req: any, res: any) {
     const accessToken = req.headers.authorization?.split(' ')[1]; // Extract access token
 
-    console.log('ACCESS TOKEN --->', accessToken);
+    console.log({accessToken});
 
     if (!accessToken) {
       return res.status(401).json({ error: 'Access token missing' });
     }
   
-    const groupNames = ["pxandpints", "calgary-game-developers"];
-  
+    const groupNames = ["pxandpints", "calgary-game-developers", "yyc-dev"];
+
     // Generate the dynamic GraphQL query
     const query = `
       query {
