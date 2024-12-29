@@ -10,7 +10,7 @@ import { HomeFooter } from './HomePageFooter'
 import { useContext } from 'react'
 import { AppContext } from '../app/providers'
 
-export function TabSection() {
+export function TabSection(communities: any ) {
   const { stickyNavRef } = useContext(AppContext)
   const tabStyle = `
       text-sm sm:text-md font-medium leading-5
@@ -98,7 +98,7 @@ export function TabSection() {
                 platforms.
               </p>
             </div>
-            <Platforms />
+            <Platforms groups={communities} />
           </TabPanel>
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-4">

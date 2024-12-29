@@ -1,5 +1,8 @@
 export default async function handler(req: any, res: any) {
     const accessToken = req.headers.authorization?.split(' ')[1]; // Extract access token
+
+    console.log('ACCESS TOKEN --->', accessToken);
+
     if (!accessToken) {
       return res.status(401).json({ error: 'Access token missing' });
     }
@@ -17,6 +20,9 @@ export default async function handler(req: any, res: any) {
               name
               description
               link
+              groupPhoto {
+                source
+              }
             }
           `
           )
