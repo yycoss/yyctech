@@ -60,6 +60,22 @@ export const platforms = [
     badge: 'New',
   },
   {
+    id: '21341500',
+    name: 'Elixir Calgary',
+    meetup: 'https://www.meetup.com/elixir-calgary',
+    description:
+      'This is a group for Elixir developers and functional programming enthusiast. We host quarterly meetups with pizza, beer, and Elixir-related talks from our members.',
+    link: {
+      href: 'https://www.meetup.com/elixir-calgary/',
+      label: 'meetup.com/elixir-calgary',
+    },
+    logo: '',
+    type: '',
+    image:
+      'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
+    badge: 'Growing',
+  },
+  {
     id: '31479672',
     name: 'Calgary Software Crafters',
     meetup: `https://www.meetup.com/calgary-software-crafters/`,
@@ -178,22 +194,6 @@ export const platforms = [
     type: '',
     image: '/assets/images/civic.jpg',
     badge: '',
-  },
-  {
-    id: '21341500',
-    name: 'Elixir Calgary',
-    meetup: 'https://www.meetup.com/elixir-calgary',
-    description:
-      'This is a group for Elixir developers and functional programming enthusiast. We host quarterly meetups with pizza, beer, and Elixir-related talks from our members.',
-    link: {
-      href: 'https://www.meetup.com/elixir-calgary/',
-      label: 'meetup.com/elixir-calgary',
-    },
-    logo: '',
-    type: '',
-    image:
-      'https://secure.meetupstatic.com/photos/event/b/6/a/0/600_524386752.webp?w=750',
-    badge: 'Growing',
   },
   {
     id: '37708973',
