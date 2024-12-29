@@ -3,7 +3,7 @@ import { TabSection } from '@/components/TabSection'
 
 // Get Communities
 async function fetchCommunities() {
-  const response = await fetch('https://6dbe-177-226-115-12.ngrok-free.app/api/fetch-groups', {
+  const response = await fetch('https://yyctech.vercel.app/api/fetch-groups', {
     headers: {
       Authorization: `Bearer YOUR_ACCESS_TOKEN`,
     },
