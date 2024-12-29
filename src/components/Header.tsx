@@ -33,7 +33,7 @@ export function Header() {
               </span>
             </p>
           </Link>
-          <div className="hidden items-center justify-end gap-0 antialiased md:flex lg:gap-1">
+          <div className="hidden items-center justify-end gap-0 antialiased md:flex lg:gap-1 w-full">
             <NavItem
               pathname={pathname}
               resolvedTheme={resolvedTheme}
@@ -44,14 +44,14 @@ export function Header() {
               pathname={pathname}
               resolvedTheme={resolvedTheme}
               path="/newsletter"
-              text="Join Us"
+              text="Newsletter"
             />
-            <NavItem
+            {/* <NavItem
               pathname={pathname}
               resolvedTheme={resolvedTheme}
               path="/contact"
               text="Contact"
-            />
+            /> */}
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle />

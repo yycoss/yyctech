@@ -1,16 +1,24 @@
-'use client';
-import React from 'react';
-import { useForm } from 'react-hook-form';
+'use client'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import toast, { Toaster} from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
+const notify = () => toast.success('Thanks for joining out waiting list!');
+const notifyError = () => toast.error('An error occurred. Please try again.');
 const BasicForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm()
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const onSubmit = (data: any) => {
     const { firstName, lastName, email } = data
+    setLoading(true);
 
     fetch('/api/subscribe', {
       method: 'POST',
@@ -20,20 +28,25 @@ const BasicForm = () => {
       body: JSON.stringify({ firstName, lastName, email }),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log('Success:', data)
-        alert('Success! You are now on the waiting list.')
+      .then(async () => {
+        setLoading(false);
+        notify();
+        reset();
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        router.push('/');
       })
       .catch((error) => {
-        console.error('Error:', error)
-        alert('An error occurred. Please try again.')
+        console.log(error);
+        setLoading(false);
+        notifyError();
       })
   }
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="text-zinc-600 dark:text-zinc-200 flex h-[400px] w-1/4 flex-col justify-center rounded-xl border border-red-500 dark:border-zinc-400 p-14"    >
+      className="flex h-[400px] flex-col justify-center p-14 text-zinc-600 xl:w-1/4 dark:border-zinc-400 dark:text-zinc-200"
+    >
       <h1 className="mb-10 text-center text-xl">
         Join our newsletter waiting list
       </h1>
@@ -44,12 +57,10 @@ const BasicForm = () => {
           {...register('firstName', { required: 'First name is required' })}
           type="text"
           placeholder="First name"
-          className="w-full rounded-lg border border-zinc-400 p-2"
+          className="w-full rounded-full border border-zinc-200 p-4"
         />
         {errors.firstName?.message && (
-          <p style={{ color: 'red' }}>
-            {errors.firstName?.message?.toString()}
-          </p>
+          <p className='pl-4'>{errors.firstName?.message?.toString()}</p>
         )}
       </div>
       <div style={{ marginBottom: '1rem' }}>
@@ -59,11 +70,9 @@ const BasicForm = () => {
           {...register('lastName', { required: 'Last name is required' })}
           type="text"
           placeholder="Last name"
-          className="w-full rounded-lg border border-zinc-400 p-2"
+          className="w-full rounded-full border border-zinc-200 p-4"
         />
-        {errors.lastName && (
-          <p style={{ color: 'red' }}>{errors.lastName?.message?.toString()}</p>
-        )}
+        {errors.lastName && <p className='pl-4'>{errors.lastName?.message?.toString()}</p>}
       </div>
 
       <div style={{ marginBottom: '1rem' }}>
@@ -79,21 +88,21 @@ const BasicForm = () => {
           })}
           type="email"
           placeholder="Email address"
-          className="w-full rounded-lg border border-zinc-400 p-2"
+          className="w-full rounded-full border border-zinc-200 p-4"
         />
-        {errors.email?.message && (
-          <p style={{ color: 'red' }}>{errors.email.message.toString()}</p>
-        )}
+        {errors.email?.message && <p className='pl-4'>{errors.email.message.toString()}</p>}
       </div>
 
       <button
+        disabled={loading}
         type="submit"
-        className="mt-2 w-full rounded-full bg-white p-3 font-semibold shadow-sm transition-all duration-300 hover:bg-red-500 hover:tracking-widest hover:text-white lg:mt-4 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:font-semibold dark:hover:text-red-500"
+        className="mt-2 w-full rounded-full p-4 font-semibold shadow-sm transition-all hover:border text-white hover:text-zinc-600 duration-300 bg-red-500 hover:bg-white hover:tracking-widest hover:text-white lg:mt-4 dark:border dark:hover:text-white dark:bg-transparent dark:hover:bg-red-500 dark:hover:font-semibold dark:hover:white"
       >
-        Submit
+        {loading ? 'Sending...' : 'Submit'}
       </button>
+      <Toaster />
     </form>
   )
 }
 
-export default BasicForm;
+export default BasicForm

@@ -85,9 +85,9 @@ export default function MobileNav() {
           <Link href="/newsletter" onClick={() => setIsOpen(false)}>
             <li className="select-none py-4 text-xl">JOIN US</li>
           </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)}>
+          {/* <Link href="/contact" onClick={() => setIsOpen(false)}>
             <li className="select-none py-4 text-xl">CONTACT</li>
-          </Link>
+          </Link> */}
         </ul>
       </div>
     </div>

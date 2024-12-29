@@ -80,8 +80,7 @@ export function TabSection(communities: any ) {
               <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
                 Find events and meetups happening in Calgary&apos;s tech
                 community. Explore opportunities to learn, connect, and
-                collaborate. Contact [contact info] if you have an event you
-                want to add to the list.
+                collaborate.
               </p>
             </div>
             <Events />
