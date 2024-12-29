@@ -52,7 +52,8 @@ export default function Platforms(groups: { groups: { communities: Record<string
       className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
       {communities.map((group, index) => (
-        <Link key={index} href={group[1].link.href} target="_blank">
+        console.log(group[1]),
+        <Link key={index} href={group[1].link.href ?? ''} target="_blank">
          <Card
            as="li"
            key={group[1].name}

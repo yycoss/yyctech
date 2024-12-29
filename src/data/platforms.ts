@@ -4,7 +4,7 @@ import discordLogo from '@/images/logos/discord.webp'
 export const platforms = [
   {
     id: '1539617',
-    name: 'Pixels & Pints 🍻',
+    name: 'Pixels & Pints',
     meetup: 'https://www.meetup.com/pxandpints',
     description:
       'Venue for developers and creatives to sit down, relax and talk shop. There are no presentations or pre-defined discussion topics; just a few pints and good conversation.',
@@ -45,6 +45,7 @@ export const platforms = [
     badge: 'Popular',
   },
   {
+    id: '35337568',
     name: 'Calgary Tech Hikes',
     meetup: 'https://www.meetup.com/calgary-tech-hikes',
     description:
@@ -59,6 +60,7 @@ export const platforms = [
     badge: 'New',
   },
   {
+    id: '31479672',
     name: 'Calgary Software Crafters',
     meetup: `https://www.meetup.com/calgary-software-crafters/`,
     description:
@@ -73,6 +75,7 @@ export const platforms = [
     badge: 'Recommended',
   },
   {
+    id: '30825538',
     name: 'Software Developers of Calgary',
     meetup: 'https://www.meetup.com/software-developers-of-calgary',
     description:
@@ -87,6 +90,7 @@ export const platforms = [
     badge: 'New',
   },
   {
+    id: '22102008',
     name: "Calgary's Google Developer Group",
     meetup: 'https://www.meetup.com/gdgyyc',
     description:
@@ -101,6 +105,7 @@ export const platforms = [
     badge: '',
   },
   {
+    id: '37687964',
     name: 'Calgary Tech Talks',
     meetup: 'https://www.meetup.com/calgary-tech-talks1',
     description:
@@ -115,6 +120,7 @@ export const platforms = [
     badge: '',
   },
   {
+    id: '37404646',
     name: 'The Test Tribe Calgary',
     meetup: 'https://www.meetup.com/the-test-tribe-calgary',
     description:
@@ -129,6 +135,7 @@ export const platforms = [
     badge: 'New',
   },
   {
+    id: '2758592',
     name: 'Calgary UX',
     meetup: 'https://www.meetup.com/calgaryux',
     description:
@@ -143,6 +150,7 @@ export const platforms = [
     badge: '',
   },
   {
+    id: '34528497',
     name: 'Write the Docs Calgary',
     meetup: 'https://www.meetup.com/wtd-calgary',
     description:
@@ -157,6 +165,7 @@ export const platforms = [
     badge: '',
   },
   {
+    id: '30899016',
     name: 'CivicTech YYC - Tech for Good',
     meetup: 'https://www.meetup.com/civictechyyc-tech-for-good',
     description:
@@ -171,6 +180,7 @@ export const platforms = [
     badge: '',
   },
   {
+    id: '21341500',
     name: 'Elixir Calgary',
     meetup: 'https://www.meetup.com/elixir-calgary',
     description:
@@ -186,6 +196,7 @@ export const platforms = [
     badge: 'Growing',
   },
   {
+    id: '37708973',
     name: 'Hack The Box Calgary',
     meetup: 'https://www.meetup.com/hack-the-box-meetup-calgary-ca',
     description:
@@ -201,6 +212,7 @@ export const platforms = [
     badge: 'New',
   },
   {
+    id: '37446221',
     name: 'Tech Connect Alberta',
     meetup: 'https://www.meetup.com/tech-connect-ab',
     description:
