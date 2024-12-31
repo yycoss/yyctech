@@ -6,8 +6,9 @@ export default async function handler(req: any, res: any) {
 
   const query = `
     query {
-      event(id: "305194921") {
+      event(id: "304329045") {
         title
+        description
         dateTime
       }
     }
@@ -29,8 +30,9 @@ export default async function handler(req: any, res: any) {
         `Failed to fetch data: ${response.statusText}, Details: ${errorDetails}`,
       )
     }
-
+    
     const data = await response.json()
+
     res.status(200).json(data)
   } catch (error) {
     if (error instanceof Error) {
