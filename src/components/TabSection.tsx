@@ -7,10 +7,10 @@ import { FaUsers } from 'react-icons/fa'
 import { FaHandHoldingHeart } from 'react-icons/fa'
 import { CgCalendarToday } from 'react-icons/cg'
 import { HomeFooter } from './HomePageFooter'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../app/providers'
 
-export function TabSection(communities: any ) {
+export function TabSection(communities: any) {
   const { stickyNavRef } = useContext(AppContext)
   const tabStyle = `
       text-sm sm:text-md font-medium leading-5
@@ -32,10 +32,12 @@ export function TabSection(communities: any ) {
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
+  console.log('Cpmmunities', communities);
+
   return (
     <TabGroup
       className={
-        'bg-[#fafafa] relative z-40 w-full md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'
+        'relative z-40 w-full bg-[#fafafa] md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'
       }
     >
       <div
@@ -80,10 +82,10 @@ export function TabSection(communities: any ) {
               <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
                 Find events and meetups happening in Calgary&apos;s tech
                 community. Explore opportunities to learn, connect, and
-                collaborate.
+                collaborate. If you&apos;d like to add your event to our calendar please reach out to us at hello@yyctech.ca
               </p>
             </div>
-            <Events />
+            <Events events={communities.communities} />
           </TabPanel>
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-4">

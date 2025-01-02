@@ -32,7 +32,7 @@ export const events = [
     every: '3rd thursday'
   },
   {
-    name: 'SDC | Project-based Hackathon',
+    name: 'Project-based Mini-Hackathon!',
     date: '2024-11-30',
     venue: 'Central Library',
     time: '6:00 PM',

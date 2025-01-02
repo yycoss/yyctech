@@ -36,7 +36,7 @@ export default function Platforms(groups: {
   groups: { communities: Record<string, Platform> }
 }) {
   const data = groups
-  const communities = Object.entries(data.groups.communities)
+  const communities = Object.entries(data.groups.communities);
 
   for (let i = 0; i < communities.length; i++) {
     const currentPlatform = platforms.find(

@@ -1,11 +1,12 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { Card } from '@/components/Card'
-import { events } from '@/data/events'
+import { events as eventData } from '@/data/events'
 import { FaCalendar } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
+import { FaClock } from 'react-icons/fa6'
 
 interface Event {
   name: string
@@ -37,92 +38,131 @@ export const metadata: Metadata = {
   description: 'Events for tech enthusiasts in Calgary.',
 }
 
-export default function Events() {
-  const [orderedEvents, setOrderedEvents] = useState<Event[]>(events)
+export default function Events(events: any) {
+  const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
 
-  function getNthTuesday(year: number, month: number, n: number) {
-    // Start with the first day of the month
-    const firstDayOfMonth = new Date(year, month, 1)
-    // Find the first Tuesday of the month
-    const dayOfWeek = firstDayOfMonth.getDay()
-    const daysUntilTuesday = (9 - dayOfWeek) % 7 // Ensures the next Tuesday
-    // Calculate the Nth Tuesday (1st Tuesday + (n - 1) weeks)
-    const nthTuesday = 1 + daysUntilTuesday + (n - 1) * 7
-    return new Date(year, month, nthTuesday)
-  }
+  // function getNthTuesday(year: number, month: number, n: number) {
+  //   // Start with the first day of the month
+  //   const firstDayOfMonth = new Date(year, month, 1)
+  //   // Find the first Tuesday of the month
+  //   const dayOfWeek = firstDayOfMonth.getDay()
+  //   const daysUntilTuesday = (9 - dayOfWeek) % 7 // Ensures the next Tuesday
+  //   // Calculate the Nth Tuesday (1st Tuesday + (n - 1) weeks)
+  //   const nthTuesday = 1 + daysUntilTuesday + (n - 1) * 7
+  //   return new Date(year, month, nthTuesday)
+  // }
 
-  function getNthThursday(year: number, month: number, n: number) {
-    // Start with the first day of the month
-    const firstDayOfMonth = new Date(year, month, 1)
-    // Find the first Thursday of the month
-    const dayOfWeek = firstDayOfMonth.getDay()
-    const daysUntilThursday = (11 - dayOfWeek) % 7 // Ensures the next Thursday
-    // Calculate the Nth Thursday (1st Thursday + (n - 1) weeks)
-    const nthThursday = 1 + daysUntilThursday + (n - 1) * 7
-    return new Date(year, month, nthThursday)
-  }
+  // function getNthThursday(year: number, month: number, n: number) {
+  //   // Start with the first day of the month
+  //   const firstDayOfMonth = new Date(year, month, 1)
+  //   // Find the first Thursday of the month
+  //   const dayOfWeek = firstDayOfMonth.getDay()
+  //   const daysUntilThursday = (11 - dayOfWeek) % 7 // Ensures the next Thursday
+  //   // Calculate the Nth Thursday (1st Thursday + (n - 1) weeks)
+  //   const nthThursday = 1 + daysUntilThursday + (n - 1) * 7
+  //   return new Date(year, month, nthThursday)
+  // }
 
-  function getNextMonthDate(year: number, month: number) {
-    return new Date(year, month + 1)
+  // function getNextMonthDate(year: number, month: number) {
+  //   return new Date(year, month + 1)
+  // }
+
+  // useEffect(() => {
+  //   const today = new Date()
+  //   const year = today.getFullYear()
+  //   const month = today.getMonth() + 1
+  //   const options = {
+  //     day: 'numeric' as const,
+  //     month: 'long' as const,
+  //     year: 'numeric' as const,
+  //   }
+
+  //   const updatedEvents = events.map((event, i) => {
+  //     if (
+  //       (event.date < new Date().toISOString() || !event.date) &&
+  //       event.recurrent
+  //     ) {
+  //       switch (event.every) {
+  //         case '3rd thursday':
+  //           event.date = new Date(
+  //             getNthThursday(year, month - 1, 3).setDate(
+  //               getNthThursday(year, month - 1, 3).getDate() - 1,
+  //             ),
+  //           ).toLocaleDateString('en-GB', options)
+  //           break
+  //         case '1st and 3rd tuesday':
+  //           const firstTuesday = getNthTuesday(
+  //             year,
+  //             month,
+  //             1,
+  //           ).toLocaleDateString('en-GB', options)
+  //           const thirdTuesday = getNthTuesday(
+  //             year,
+  //             month,
+  //             3,
+  //           ).toLocaleDateString('en-GB', options)
+  //           event.date =
+  //             firstTuesday < new Date().toISOString()
+  //               ? thirdTuesday
+  //               : firstTuesday
+  //           break
+  //         case 'month':
+  //           event.date = getNextMonthDate(year, month).toLocaleDateString(
+  //             'en-GB',
+  //             options,
+  //           )
+  //           break
+  //         default:
+  //           break
+  //       }
+  //     }
+  //     return event
+  //   })
+
+  //   const sortedEvents = updatedEvents.sort(
+  //     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  //   )
+
+  //   setOrderedEvents(sortedEvents)
+  // }, [])
+
+  const getEvents = () => {
+    const flatEvents: any = []
+    Object.entries(events.events).map(([groupKey, group]) => {
+      const { name, upcomingEvents } = group
+      upcomingEvents?.edges?.map((eventItem, idx) => {
+        flatEvents.push({
+          community: name,
+          title: eventItem.node.title,
+          date: eventItem.node.dateTime,
+          url: eventItem.node.shortUrl,
+          description: eventItem.node.description,
+          image: eventItem.node.image.source,
+          venue: eventItem.node.venue.name,
+        })
+      })
+    })
+
+    flatEvents.sort(
+      (a: any, b: any) =>
+        new Date(a.date).getTime() - new Date(b.date).getTime(),
+    )
+
+    for (let i = 0; i < flatEvents.length; i++) {
+      const currentEvent = eventData.find(
+        (item) => item.name === (flatEvents[i] as any).title,
+      )
+
+      if (currentEvent) {
+        flatEvents[i].image = currentEvent.image
+      }
+    }
+
+    setOrderedEvents(flatEvents)
   }
 
   useEffect(() => {
-    const today = new Date()
-    const year = today.getFullYear()
-    const month = today.getMonth() + 1
-    const options = {
-      day: 'numeric' as const,
-      month: 'long' as const,
-      year: 'numeric' as const,
-    }
-
-    const updatedEvents = events.map((event, i) => {
-      if (
-        (event.date < new Date().toISOString() || !event.date) &&
-        event.recurrent
-      ) {
-        switch (event.every) {
-          case '3rd thursday':
-            event.date = new Date(
-              getNthThursday(year, month - 1, 3).setDate(
-                getNthThursday(year, month - 1, 3).getDate() - 1,
-              ),
-            ).toLocaleDateString('en-GB', options)
-            break
-          case '1st and 3rd tuesday':
-            const firstTuesday = getNthTuesday(
-              year,
-              month,
-              1,
-            ).toLocaleDateString('en-GB', options)
-            const thirdTuesday = getNthTuesday(
-              year,
-              month,
-              3,
-            ).toLocaleDateString('en-GB', options)
-            event.date =
-              firstTuesday < new Date().toISOString()
-                ? thirdTuesday
-                : firstTuesday
-            break
-          case 'month':
-            event.date = getNextMonthDate(year, month).toLocaleDateString(
-              'en-GB',
-              options,
-            )
-            break
-          default:
-            break
-        }
-      }
-      return event
-    })
-
-    const sortedEvents = updatedEvents.sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-    )
-
-    setOrderedEvents(sortedEvents)
+    getEvents()
   }, [])
 
   return (
@@ -130,52 +170,64 @@ export default function Events() {
       role="list"
       className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
-      {orderedEvents.map(
+      {orderedEvents?.map(
         (event) => {
-          const date = new Date(event.date)
-
           return (
             <Card
               as="li"
-              key={event.name}
+              key={event.community}
               className="group hover:scale-[102%] hover:shadow-md"
             >
-              {event.badge && (
+              {/* {event.badge && (
                 <div className="absolute right-4 top-4 z-50 translate-x-6 rounded-lg bg-[#dd514c] px-2 text-[0.75em] font-semibold text-white opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
                   {event.badge}
                 </div>
+              )} */}
+              {event.image && (
+                <div className="relative h-[180px] w-full overflow-hidden rounded-md">
+                  <Image
+                    src={event.image}
+                    width={400}
+                    height={300}
+                    alt="community-image"
+                    className="absolute left-0 top-0 h-full w-full object-cover opacity-85 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[100%] dark:opacity-50"
+                  />
+                </div>
               )}
-              <div className="relative h-[180px] w-full overflow-hidden rounded-md">
-                <Image
-                  src={event.image}
-                  width={400}
-                  height={300}
-                  alt="community-image"
-                  className="absolute left-0 top-0 h-full w-full object-cover opacity-85 transition-all duration-300 group-hover:scale-105 group-hover:opacity-[100%] dark:opacity-50"
-                />
-              </div>
               <div className="px-4 opacity-60 group-hover:opacity-100">
                 <div className="mt-2 flex w-full flex-col items-center gap-1">
                   <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
-                    <Card.Link href={event.link.href}>{event.name}</Card.Link>
+                    <Card.Link href={event.url}>{event.title}</Card.Link>
                   </h2>
-                  <div className="flex w-full items-center gap-2">
-                    <FaCalendar className="text-red-600 dark:text-zinc-50" />
-                    <h3 className="w-full text-sm">
-                      {new Date(
-                        date.setDate(date.getDate() + 1),
-                      ).toDateString()}
-                    </h3>
-                  </div>
-                  <div className="flex w-full items-center gap-2">
-                    <FaLocationDot className="text-red-600 dark:text-zinc-50" />
-                    <h3 className="w-full text-sm">{`${event.venue} @ ${event.time}`}</h3>
+                  <div className="flex w-full justify-start gap-2">
+                    <div className="flex w-fit items-center gap-2">
+                      <FaCalendar className="dark:text-zinc-50" />
+                      <h3 className="w-full text-sm">
+                        {new Date(event.date).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
+                        })}
+                      </h3>
+                    </div>
+                    <div className="flex w-fit items-center gap-2">
+                      <FaClock />
+                      <h3 className="w-full text-sm">
+                        {event.date.split('T')[1].split('-')[0]}
+                      </h3>
+                    </div>
+                    <div className="flex w-fit items-center gap-2">
+                      <FaLocationDot className="text-red-600 dark:text-zinc-50" />
+                      <h3 className="w-full text-sm">{`${event.venue}`}</h3>
+                    </div>
                   </div>
                 </div>
-                <Card.Description>{event.description}</Card.Description>
+                <Card.Description>
+                  {event.description.slice(0, 160)}...
+                </Card.Description>
                 <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{event.link.label}</span>
+                  <span className="ml-2">See more</span>
                 </p>
               </div>
             </Card>

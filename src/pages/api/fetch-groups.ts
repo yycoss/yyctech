@@ -35,6 +35,25 @@ export default async function handler(req: any, res: any) {
               groupPhoto {
                 source
               }
+              upcomingEvents(input: { first: 2 }) {
+                edges {
+                  node {
+                    id
+                    title
+                    dateTime
+                    shortUrl
+                    description
+                    shortDescription
+                    image {
+                      source
+                    }
+                    venue {
+                      name
+                    }
+                    dateTime
+                  }
+                }
+              }
             }
           `
           )
