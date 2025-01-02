@@ -20,6 +20,9 @@ interface Event {
   badge?: string | undefined
   recurrent?: boolean
   every?: string | undefined
+  community: string
+  title: string
+  url: string
 }
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -40,97 +43,11 @@ export const metadata: Metadata = {
 
 export default function Events(events: any) {
   const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
-
-  // function getNthTuesday(year: number, month: number, n: number) {
-  //   // Start with the first day of the month
-  //   const firstDayOfMonth = new Date(year, month, 1)
-  //   // Find the first Tuesday of the month
-  //   const dayOfWeek = firstDayOfMonth.getDay()
-  //   const daysUntilTuesday = (9 - dayOfWeek) % 7 // Ensures the next Tuesday
-  //   // Calculate the Nth Tuesday (1st Tuesday + (n - 1) weeks)
-  //   const nthTuesday = 1 + daysUntilTuesday + (n - 1) * 7
-  //   return new Date(year, month, nthTuesday)
-  // }
-
-  // function getNthThursday(year: number, month: number, n: number) {
-  //   // Start with the first day of the month
-  //   const firstDayOfMonth = new Date(year, month, 1)
-  //   // Find the first Thursday of the month
-  //   const dayOfWeek = firstDayOfMonth.getDay()
-  //   const daysUntilThursday = (11 - dayOfWeek) % 7 // Ensures the next Thursday
-  //   // Calculate the Nth Thursday (1st Thursday + (n - 1) weeks)
-  //   const nthThursday = 1 + daysUntilThursday + (n - 1) * 7
-  //   return new Date(year, month, nthThursday)
-  // }
-
-  // function getNextMonthDate(year: number, month: number) {
-  //   return new Date(year, month + 1)
-  // }
-
-  // useEffect(() => {
-  //   const today = new Date()
-  //   const year = today.getFullYear()
-  //   const month = today.getMonth() + 1
-  //   const options = {
-  //     day: 'numeric' as const,
-  //     month: 'long' as const,
-  //     year: 'numeric' as const,
-  //   }
-
-  //   const updatedEvents = events.map((event, i) => {
-  //     if (
-  //       (event.date < new Date().toISOString() || !event.date) &&
-  //       event.recurrent
-  //     ) {
-  //       switch (event.every) {
-  //         case '3rd thursday':
-  //           event.date = new Date(
-  //             getNthThursday(year, month - 1, 3).setDate(
-  //               getNthThursday(year, month - 1, 3).getDate() - 1,
-  //             ),
-  //           ).toLocaleDateString('en-GB', options)
-  //           break
-  //         case '1st and 3rd tuesday':
-  //           const firstTuesday = getNthTuesday(
-  //             year,
-  //             month,
-  //             1,
-  //           ).toLocaleDateString('en-GB', options)
-  //           const thirdTuesday = getNthTuesday(
-  //             year,
-  //             month,
-  //             3,
-  //           ).toLocaleDateString('en-GB', options)
-  //           event.date =
-  //             firstTuesday < new Date().toISOString()
-  //               ? thirdTuesday
-  //               : firstTuesday
-  //           break
-  //         case 'month':
-  //           event.date = getNextMonthDate(year, month).toLocaleDateString(
-  //             'en-GB',
-  //             options,
-  //           )
-  //           break
-  //         default:
-  //           break
-  //       }
-  //     }
-  //     return event
-  //   })
-
-  //   const sortedEvents = updatedEvents.sort(
-  //     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-  //   )
-
-  //   setOrderedEvents(sortedEvents)
-  // }, [])
-
   const getEvents = () => {
     const flatEvents: any = []
-    Object.entries(events.events).map(([groupKey, group]) => {
+    Object.entries(events.events).map(([group] : any) => {
       const { name, upcomingEvents } = group
-      upcomingEvents?.edges?.map((eventItem, idx) => {
+      upcomingEvents?.edges?.map((eventItem: any) => {
         flatEvents.push({
           community: name,
           title: eventItem.node.title,
