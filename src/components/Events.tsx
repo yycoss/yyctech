@@ -45,7 +45,7 @@ export default function Events(events: any) {
   const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
   const getEvents = () => {
     const flatEvents: any = []
-    Object.entries(events.events).map(([group] : any) => {
+    Object.entries(events.events).map(([key, group] : any) => {
       const { name, upcomingEvents } = group
       upcomingEvents?.edges?.map((eventItem: any) => {
         flatEvents.push({
