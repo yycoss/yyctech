@@ -32,7 +32,7 @@ export function TabSection(communities: any) {
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
-  console.log('Cpmmunities', communities);
+  console.log('Cpmmunities', communities)
 
   return (
     <TabGroup
@@ -82,7 +82,8 @@ export function TabSection(communities: any) {
               <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
                 Find events and meetups happening in Calgary&apos;s tech
                 community. Explore opportunities to learn, connect, and
-                collaborate. If you&apos;d like to add your event to our calendar please reach out to us at hello@yyctech.ca
+                collaborate. If you&apos;d like to add your event to our
+                calendar please reach out to us at castanos@pm.me
               </p>
             </div>
             <Events events={communities.communities} />

@@ -37,16 +37,16 @@ export function Footer() {
                 Join Us
               </li>
             </Link>
-            <Link href={'/contact'}>
+            <Link href={'mailto:castanos@pm.me'}>
               <li className="text-sm hover:font-medium hover:text-red-500">
                 Contact
               </li>
             </Link>
-            <Link href={'/about'}>
+            {/* <Link href={'/about'}>
               <li className="text-sm hover:font-medium hover:text-red-500">
                 Add events
               </li>
-            </Link>
+            </Link> */}
           </ul>
           <div className="flex flex-col items-end">
             <Link href={'/'}>
@@ -70,31 +70,31 @@ export function Footer() {
             <span className="text-sm text-zinc-600 dark:text-zinc-500">
               Calgary, Alberta
             </span>
-            <Link href="mailto:hello@yyctech.ca">
+            <Link href="mailto:castanos@pm.me">
               <span className="text-sm font-medium text-red-500">
-                hello@yyctech.ca
+                castanos@pm.me
               </span>
             </Link>
-            <div className="mt-4 flex gap-2">
-              <Link href="https://twitter.com/yyctech">
+            <div className="mt-3 flex gap-2">
+              <Link href="#">
                 <FaXTwitter
                   size={24}
                   className="hover:scale-105 hover:text-red-500"
                 />
               </Link>
-              <Link href="https://linkedin.com/company/yyctech">
+              <Link href="#">
                 <FaLinkedin
                   size={24}
                   className="hover:scale-105 hover:text-red-500"
                 />
               </Link>
-              <Link href="https://instagram.com/yyctech">
+              <Link href="#">
                 <FaInstagram
                   size={24}
                   className="hover:scale-105 hover:text-red-500"
                 />
               </Link>
-              <Link href="https://facebook.com/yyctech">
+              <Link href="#">
                 <FaFacebookSquare
                   size={24}
                   className="hover:scale-105 hover:text-red-500"

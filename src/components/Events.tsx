@@ -116,7 +116,7 @@ export default function Events(events: any) {
                   <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
                     <Card.Link href={event.url}>{event.title}</Card.Link>
                   </h2>
-                  <div className="flex w-full justify-start gap-2">
+                  <div className="flex w-full justify-start lg:gap-2 flex-col xl:flex-row">
                     <div className="flex w-fit items-center gap-2">
                       <FaCalendar className="dark:text-zinc-50" />
                       <h3 className="w-full text-sm">

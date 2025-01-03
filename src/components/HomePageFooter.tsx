@@ -1,18 +1,18 @@
-import Link from "next/link";
-import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa6";
+import Link from 'next/link'
+import { FaXTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6'
+import { FaFacebookSquare } from 'react-icons/fa'
+import { FaArrowUp } from 'react-icons/fa6'
 
 export function HomeFooter() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
 
   return (
-    <footer className="mx-5 xl:mx-0 dark:bg-[#18181b] bg-[#fafafa]">
+    <footer className="mx-5 bg-[#fafafa] xl:mx-0 dark:bg-[#18181b]">
       <div className="mx-auto max-w-[1260px] pb-10">
         <div className="flex items-center justify-between py-10">
           <ul className="flex flex-col gap-1 text-zinc-600 dark:text-zinc-500">
@@ -29,16 +29,16 @@ export function HomeFooter() {
                 Join Us
               </li>
             </Link>
-            <Link href={'/contact'}>
+            <Link href={'mailto:castanos@pm.me'}>
               <li className="text-sm hover:font-medium hover:text-red-500">
                 Contact
               </li>
             </Link>
-            <Link href={'/about'}>
+            {/* <Link href={'/about'}>
               <li className="text-sm hover:font-medium hover:text-red-500">
                 Add events
               </li>
-            </Link>
+            </Link> */}
           </ul>
           <div className="flex flex-col items-end">
             <Link href={'/'}>
@@ -62,23 +62,35 @@ export function HomeFooter() {
             <span className="text-sm text-zinc-600 dark:text-zinc-500">
               Calgary, Alberta
             </span>
-            <Link href="mailto:hello@yyctech.ca">
+            <Link href="mailto:castanos@pm.me">
               <span className="text-sm font-medium text-red-500">
-                hello@yyctech.ca
+                castanos@pm.me
               </span>
             </Link>
-            <div className="mt-4 flex gap-2">
-              <Link href="https://twitter.com/yyctech">
-                <FaXTwitter size={24}  className="hover:text-red-500 hover:scale-105"/>
+            <div className="mt-3 flex gap-2">
+              <Link href="#">
+                <FaXTwitter
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
-              <Link href="https://linkedin.com/company/yyctech">
-                <FaLinkedin size={24} className="hover:text-red-500 hover:scale-105"/>
+              <Link href="#">
+                <FaLinkedin
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
-              <Link href="https://instagram.com/yyctech">
-                <FaInstagram size={24} className="hover:text-red-500 hover:scale-105"/>
+              <Link href="#">
+                <FaInstagram
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
-              <Link href="https://facebook.com/yyctech">
-                <FaFacebookSquare size={24} className="hover:text-red-500 hover:scale-105"/>
+              <Link href="#">
+                <FaFacebookSquare
+                  size={24}
+                  className="hover:scale-105 hover:text-red-500"
+                />
               </Link>
             </div>
           </div>
