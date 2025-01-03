@@ -6,6 +6,7 @@ export default async function handler(req: any, res: any) {
     const groupNames = [
       'pxandpints',
       'calgary-game-developers',
+      'elixir-calgary',
       'yyc-dev',
       'calgary-tech-hikes',
       'calgary-software-crafters',
@@ -16,7 +17,6 @@ export default async function handler(req: any, res: any) {
       'calgaryux',
       'wtd-calgary',
       'civictechyyc-tech-for-good',
-      'elixir-calgary',
       'hack-the-box-meetup-calgary-ca',
       'tech-connect-ab',
     ]

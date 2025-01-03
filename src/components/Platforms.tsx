@@ -77,7 +77,7 @@ export default function Platforms(groups: {
             <div className="relative h-[180px] w-full overflow-hidden rounded-md">
               <Image
                 src={
-                  group[1].groupPhoto.source
+                  group[1].groupPhoto.source && !group[1].name.includes('Elixir')
                     ? group[1].groupPhoto.source
                     : group[1].secondaryImage
                 }

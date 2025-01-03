@@ -32,8 +32,6 @@ export function TabSection(communities: any) {
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
-  console.log('Cpmmunities', communities)
-
   return (
     <TabGroup
       className={
