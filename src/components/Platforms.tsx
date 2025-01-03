@@ -36,7 +36,7 @@ export default function Platforms(groups: {
   groups: { communities: Record<string, Platform> }
 }) {
   const data = groups
-  const communities = Object.entries(data.groups.communities);
+  const communities = Object.entries(data.groups.communities)
 
   for (let i = 0; i < communities.length; i++) {
     const currentPlatform = platforms.find(
@@ -60,7 +60,7 @@ export default function Platforms(groups: {
       className="mx-auto grid max-w-7xl grid-cols-1 gap-6 antialiased sm:grid-cols-2 lg:grid-cols-3"
     >
       {communities.map((group, index) => (
-        <Link key={index} href={group[1].link.href ?? ''} target="_blank">
+        <Link key={index} href={group[1].link.href ? group[1].link.href : '#'}>
           <Card
             as="li"
             key={group[1].name}

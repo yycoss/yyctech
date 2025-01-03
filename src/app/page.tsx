@@ -7,7 +7,7 @@ async function fetchCommunities() {
     headers: {
       Authorization: `Bearer YOUR_ACCESS_TOKEN`,
     },
-    cache: 'no-cache',
+    next: { revalidate: 7200 }, // revalidate every 2 hours
   })
 
   if (!response.ok) {
