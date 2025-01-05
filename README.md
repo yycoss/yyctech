@@ -23,7 +23,6 @@
 [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <h1 align="center">YYCtech</h1>
   <p align="center">
@@ -87,8 +86,6 @@ We believe that a strong tech community is essential for Calgary’s growth and 
 To get a local copy up and running follow these steps.
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Create a Meetup API client [https://www.meetup.com/api/oauth/list/](https://www.meetup.com/api/oauth/list/)
 2. Clone the repo
@@ -172,8 +169,6 @@ Project Link: [https://github.com/yycoss/yyctech](https://github.com/yycoss/yyct
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * Thanks to Serene Yew for sparking the idea and setting things in motion
 
