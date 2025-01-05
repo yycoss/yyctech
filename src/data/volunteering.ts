@@ -1,6 +1,6 @@
 export const volunteering = [
   {
-    name: 'Calgart Public Library | Tech Mentor',
+    name: 'Calgary Public Library | Tech Mentor',
     date: '15th November 2024',
     venue: 'Calgary Public Library',
     time: '(1 to 2 hours)',

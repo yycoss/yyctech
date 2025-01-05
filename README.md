@@ -1,43 +1,212 @@
-# Spotlight
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a id="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Unlicense License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h1 align="center">YYCtech</h1>
+  <p align="center">
+    Keep track of Calgary's tech communities and local events
+  </p>
+</div>
 
-## Getting started
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <!-- <li><a href="#usage">Usage</a></li> -->
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-To get started with this template, first install the npm dependencies:
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-```bash
-npm install
-```
+![yyctech](/public/assets/images/readme.png)
 
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
+YYCtech is community-driven platform dedicated to connecting tech enthusiasts and professionals in Calgary. Our goal is to showcase the tech scene in the city, bringing together people passionate about technology, innovation, and collaboration.
 
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
+We curate and highlight tech events happening in Calgary, from meetups and workshops to conferences and hackathons. By providing a one-stop platform, we make it easy for Calgarians to stay informed, connect with others, and be part of the city’s growing tech ecosystem.
 
-Next, run the development server:
+We work closely with local event organizers, tech communities, and industry leaders to ensure that every event is up-to-date and accessible. Our platform offers communities and event listings and schedules to help you plan and get the most out of Calgary’s tech events.
 
-```bash
-npm run dev
-```
+We believe that a strong tech community is essential for Calgary’s growth and innovation. By connecting people and creating opportunities for learning and networking, we’re building a tech-friendly city that fosters talent, collaboration, and forward-thinking solutions.
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+![yyctech](/public/assets/images/readme2.png)
 
-## Customizing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+### Built With
 
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these steps.
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Create a Meetup API client [https://www.meetup.com/api/oauth/list/](https://www.meetup.com/api/oauth/list/)
+2. Clone the repo
+   ```sh
+   git clone git@github.com:yycoss/yyctech.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your credentials
+   ```
+    NEXT_PUBLIC_AIRTABLE_PAT=credentials-here
+    CLIENT_ID=credentials-here
+    CLIENT_SECRET=credentials-here
+    REDIRECT_URI=oauth-redirect-url-here
+   ```
+5. Validate your credentials following Meetup API OAuth2 steps
+   ```
+    https://www.meetup.com/api/authentication/#graphQl-authentication
+   ```
+6. Run the project
+   ```sh
+   npm run dev
+   ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Update README
+- [x] Integrate Meetup API
+- [ ] Add a share button funtionality
+- [ ] Add a DB for users and user data
+- [ ] Add favorite button on events and communities
+- [ ] Complete newsletter
+
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- ### Top contributors:
+
+<a href="https://github.com/othneildrew/Best-README-Template/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=othneildrew/Best-README-Template" alt="contrib.rocks image" />
+</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+
+<!-- LICENSE -->
 ## License
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## Learn more
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn more about the technologies used in this site template, see the following resources:
+<!-- CONTACT -->
+## Contact
 
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
-# yyctech
+Jose Ramon - [@josercastanos](https://twitter.com/josercastanos) - castanos@pm.me
+
+Serene Yew - hello@pixeltree.ca
+
+Project Link: [https://github.com/yycoss/yyctech](https://github.com/yycoss/yyctech)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* Thanks to Serene Yew for sparking the idea and setting things in motion
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[JQuery-url]: https://jquery.com
