@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 import ThemeToggle from './ThemeToggle'
 import NavItem from './NavItem/NavItem'
@@ -22,7 +21,7 @@ export function Header() {
                 className="font-black text-zinc-50 antialiased"
                 style={{
                   textShadow: `
-                      -0.25px -0.25px 0 #4b5563,  
+                      -0.25px -0.25px 0 #4b5563,
                       0.25px -0.25px 0 #4b5563,
                       -0.25px 0.25px 0 #4b5563,
                       0.25px 0.25px 0 #4b5563

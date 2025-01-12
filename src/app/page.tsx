@@ -2,8 +2,8 @@ import { TabSection } from '@/components/TabSection'
 import { HeroSection } from '@/components/HeroSection'
 
 // Get Communities
-async function fetchCommunities() {
-  const response = await fetch('https://yyctech.vercel.app/api/fetch-groups', {
+export async function fetchCommunities() {
+  const response = await fetch('https://a0ab-38-55-64-111.ngrok-free.app/api/fetch-groups', {
     headers: {
       Authorization: `Bearer YOUR_ACCESS_TOKEN`,
     },
@@ -21,7 +21,7 @@ async function fetchCommunities() {
 }
 
 export default async function Home() {
-  const communities = await fetchCommunities() // With upcoming events included in the obj
+  const communities = await fetchCommunities(); // With upcoming events included in the obj
 
   return (
     <div>

@@ -79,7 +79,7 @@ export default function Events(events: any) {
   }
 
   useEffect(() => {
-    getEvents()
+    getEvents();
   }, [])
 
   return (
@@ -93,7 +93,7 @@ export default function Events(events: any) {
             <Card
               as="li"
               key={event.community}
-              className="group hover:scale-[102%] hover:shadow-md"
+              className="group cursor-pointer hover:scale-[102%] hover:shadow-md"
             >
               {/* {event.badge && (
                 <div className="absolute right-4 top-4 z-50 translate-x-6 rounded-lg bg-[#dd514c] px-2 text-[0.75em] font-semibold text-white opacity-0 transition-all duration-200 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
@@ -114,9 +114,11 @@ export default function Events(events: any) {
               <div className="px-4 opacity-60 group-hover:opacity-100">
                 <div className="mt-2 flex w-full flex-col items-center gap-1">
                   <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
-                    <Card.Link href={event.url}>{event.title}</Card.Link>
+                    <Card.Link href={`/event/${event.url.split('/')[5]}`}>
+                      {event.title} 
+                    </Card.Link>
                   </h2>
-                  <div className="flex w-full justify-start lg:gap-2 flex-col xl:flex-row">
+                  <div className="flex w-full flex-col justify-start lg:gap-2 xl:flex-row">
                     <div className="flex w-fit items-center gap-2">
                       <FaCalendar className="dark:text-zinc-50" />
                       <h3 className="w-full text-sm">
