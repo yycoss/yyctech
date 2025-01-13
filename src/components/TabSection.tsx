@@ -1,17 +1,32 @@
 'use client'
+import { FaUsers } from 'react-icons/fa'
+import { CgCalendarToday } from 'react-icons/cg'
+import { FaHandHoldingHeart } from 'react-icons/fa'
+import { useContext, useEffect, useState } from 'react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+
 import Events from './Events'
 import Platforms from './Platforms'
 import Volunteering from './Volunteering'
-import { FaUsers } from 'react-icons/fa'
-import { FaHandHoldingHeart } from 'react-icons/fa'
-import { CgCalendarToday } from 'react-icons/cg'
 import { HomeFooter } from './HomePageFooter'
-import { useContext, useEffect } from 'react'
 import { AppContext } from '../app/providers'
 
 export function TabSection(communities: any) {
   const { stickyNavRef } = useContext(AppContext)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   const tabStyle = `
       text-sm sm:text-md font-medium leading-5
       text-zinc-800 dark:text-zinc-100
@@ -31,6 +46,8 @@ export function TabSection(communities: any) {
     if (stickyNavRef.current)
       stickyNavRef.current.scrollIntoView({ behavior: 'smooth' })
   }
+
+  console.log('isMobile', isMobile)
 
   return (
     <TabGroup
@@ -73,44 +90,64 @@ export function TabSection(communities: any) {
       <div className="z-40 mx-10 bg-zinc-50 py-10 lg:max-w-7xl xl:mx-auto dark:bg-zinc-900">
         <TabPanels>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-4">
-              <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
-                Upcoming Events
+            <div className="mb-8 max-w-2xl md:px-3 md:pb-4">
+              <h2 className="text-2xl font-bold tracking-tight text-red-500 md:text-3xl dark:text-zinc-100">
+                Upcoming Events 🔥
               </h2>
-              <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                Find events and meetups happening in Calgary&apos;s tech
-                community. Explore opportunities to learn, connect, and
-                collaborate. If you&apos;d like to add your event to our
-                calendar please reach out to us at castanos@pm.me
-              </p>
+              {isMobile && (
+                <p className="mt-1 text-base text-zinc-600 dark:text-zinc-400">
+                  Find tech events happening in Calgary.
+                </p>
+              )}
+              {!isMobile && (
+                <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+                  Find tech events happening in Calgary. Explore opportunities
+                  to connect and collaborate. If you&apos;d like to add your
+                  event to our calendar please reach out to us at castanos@pm.me
+                </p>
+              )}
             </div>
-            <Events events={communities.communities} />
+            <Events
+              events={communities.communities}
+              isMobile={isMobile}
+            />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-4">
-              <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
-                Join a Community
+            <div className="mb-8 max-w-2xl md:px-3 md:pb-4">
+              <h2 className="text-2xl font-bold tracking-tight text-red-500 md:text-3xl dark:text-zinc-100">
+                Join a Community 🤝
               </h2>
-              <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                Join the conversation and become part of our thriving tech
-                community! Connect with like-minded professionals and hobbyists
-                across our dedicated Slack channels, Discord servers, and other
-                platforms.
-              </p>
+              {isMobile && (
+                <p className="mt-1 text-base text-zinc-600 dark:text-zinc-400">
+                  Explore and be part of Calgary tech scene
+                </p>
+              )}
+              {!isMobile && (
+                <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+                  Join the conversation and become part of the community!
+                  Connect with like-minded professionals and hobbyists across
+                  different platforms.
+                </p>
+              )}
             </div>
             <Platforms groups={communities} />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 max-w-2xl px-3 pb-4">
-              <h2 className="text-2xl font-bold tracking-tight text-red-500 sm:text-4xl dark:text-zinc-100">
-                Find Volunteer Opportunities
+            <div className="mb-8 max-w-2xl md:px-3 md:pb-4">
+              <h2 className="text-2xl font-bold tracking-tight text-red-500 md:text-3xl dark:text-zinc-100">
+                Volunteer Opportunities 🙋‍♀️
               </h2>
-              <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-                Show your support by volunteering! Whether you’re a seasoned pro
-                or just starting out, your skills can make a big impact. Connect
-                with others, gain experience, and help shape the future of tech
-                in our city.
-              </p>
+              {isMobile && (
+                <p className="mt-1 text-base text-zinc-600 dark:text-zinc-400">
+                  Show your support by volunteering!
+                </p>
+              )}
+              {!isMobile && (
+                <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+                  Show your support by volunteering! Whether you’re a seasoned
+                  pro or just starting out, your skills can make a big impact.
+                </p>
+              )}
             </div>
             <Volunteering />
           </TabPanel>
