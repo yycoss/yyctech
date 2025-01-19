@@ -7,7 +7,7 @@ export default async function handler(req: any, res: any) {
   const eventId = req.query.eventId || req.body.eventId;
 
   if (!eventId) {
-    return res.status(400).json({ error: 'Missing eventId' });
+    return res.status(400).json({ error: 'Missing eventId' })
   }
 
   const query = `
@@ -15,8 +15,10 @@ export default async function handler(req: any, res: any) {
        event(id: $eventId) {
          title
          eventUrl
+         going
          host {
            name
+           email
            memberPhoto {
              source
            }
@@ -27,6 +29,27 @@ export default async function handler(req: any, res: any) {
          }
          description
          dateTime
+         images {
+          source
+         }
+         venue {
+         name
+         address
+         city
+         state
+         postalCode
+         crossStreet
+         venueType
+         lat
+         lng
+         }
+         group {
+          name
+          link
+				  logo {
+            source
+           }
+         }
        }
      }
     `
