@@ -63,13 +63,12 @@
 
 YYCtech is community-driven platform dedicated to connecting tech enthusiasts and professionals in Calgary. Our goal is to showcase the tech scene in the city, bringing together people passionate about technology, innovation, and collaboration.
 
+![yyctech](/public/assets/images/readme3.png)
+
 We curate and highlight tech events happening in Calgary, from meetups and workshops to conferences and hackathons. By providing a one-stop platform, we make it easy for Calgarians to stay informed, connect with others, and be part of the city’s growing tech ecosystem.
 
-We work closely with local event organizers, tech communities, and industry leaders to ensure that every event is up-to-date and accessible. Our platform offers communities and event listings and schedules to help you plan and get the most out of Calgary’s tech events.
-
-We believe that a strong tech community is essential for Calgary’s growth and innovation. By connecting people and creating opportunities for learning and networking, we’re building a tech-friendly city that fosters talent, collaboration, and forward-thinking solutions.
-
 ![yyctech](/public/assets/images/readme2.png)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
