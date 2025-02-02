@@ -45,7 +45,7 @@ export default function Events(events: any) {
   const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
   const getEvents = () => {
     const flatEvents: any = []
-    Object.entries(events.events).map(([key, group] : any) => {
+    Object.entries(events.events).map(([key, group]: any) => {
       const { name, upcomingEvents } = group
       upcomingEvents?.edges?.map((eventItem: any) => {
         flatEvents.push({
@@ -111,7 +111,7 @@ export default function Events(events: any) {
                   />
                 </div>
               )}
-              <div className="px-4 opacity-60 group-hover:opacity-100">
+              <div className="w-full px-4 opacity-60 group-hover:opacity-100">
                 <div className="mt-2 flex w-full flex-col items-center gap-1">
                   <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
                     <Card.Link href={`/event/${event.url.split('/')[5]}`}>
@@ -141,9 +141,11 @@ export default function Events(events: any) {
                     </div>
                   </div>
                 </div>
-                <Card.Description>
-                  {event.description.slice(0, 160)}...
-                </Card.Description>
+                {!events.isMobile && (
+                  <Card.Description>
+                    {event.description.slice(0, 160)}...
+                  </Card.Description>
+                )}
                 <p className="relative z-10 mt-4 flex justify-end text-sm font-medium text-zinc-400 transition group-hover:text-[#dd514c] dark:text-zinc-200">
                   <LinkIcon className="h-6 w-6 flex-none" />
                   <span className="ml-2">See more</span>
