@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header
-      className={`${isScrolled ? 'opacity-0' : ''} navbar fixed left-0 right-0 top-0 z-40 bg-transparent transition-all duration-500`}
+      className={`${isScrolled ? 'opacity-0 -z-20' : ''} navbar fixed left-0 right-0 top-0 z-40 bg-transparent transition-all duration-500`}
     >
       <nav className="mx-4 lg:mx-10 lg:max-w-7xl xl:mx-auto">
         <div className="flex items-center justify-between py-4">

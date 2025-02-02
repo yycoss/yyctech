@@ -54,7 +54,7 @@ export default function Events(events: any) {
           date: eventItem.node.dateTime,
           url: eventItem.node.shortUrl,
           description: eventItem.node.description,
-          image: eventItem.node.image.source,
+          image: eventItem.node.image.source ?? '/assets/images/volunteering2.jpg',
           venue: eventItem.node.venue.name,
         })
       })
@@ -103,7 +103,7 @@ export default function Events(events: any) {
               {event.image && (
                 <div className="relative h-[180px] w-full overflow-hidden rounded-md">
                   <Image
-                    src={event.image}
+                    src={event.image ?? '/assets/images/yyctech.webp'}
                     width={400}
                     height={300}
                     alt="community-image"
@@ -115,7 +115,7 @@ export default function Events(events: any) {
                 <div className="mt-2 flex w-full flex-col items-center gap-1">
                   <h2 className="mt-3 w-full text-lg font-semibold text-zinc-700 dark:text-zinc-100">
                     <Card.Link href={`/event/${event.url.split('/')[5]}`}>
-                      {event.title} 
+                      {event.title}
                     </Card.Link>
                   </h2>
                   <div className="flex w-full flex-col justify-start lg:gap-2 xl:flex-row">
