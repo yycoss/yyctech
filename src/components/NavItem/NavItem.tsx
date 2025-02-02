@@ -13,6 +13,7 @@ const NavItem = ({
   path,
   text,
 }: NavItemProps) => {
+
   return (
     <Link href={path}>
       <span
@@ -31,7 +32,7 @@ const NavItem = ({
           //       ? 'white'
           //       : '#dd514c',
         }}
-        className={`text-xs font-medium text-white backdrop-blur hover:shadow lg:text-[1em] dark:ring-1 dark:ring-zinc-900/5 dark:hover:ring-white/20 ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
+        className={`text-xs font-medium ${pathname === '/' ? 'text-white' : 'text-red-500'} dark:text-white backdrop-blur hover:shadow lg:text-[1em] dark:ring-1 dark:ring-zinc-900/5 dark:hover:ring-white/20 ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
       >
         {text}
       </span>

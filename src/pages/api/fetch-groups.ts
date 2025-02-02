@@ -40,6 +40,13 @@ export default async function handler(req: any, res: any) {
                   node {
                     id
                     title
+                    eventUrl
+                    host {
+                      name
+                      memberPhoto {
+                        source
+                      }
+                    }
                     dateTime
                     shortUrl
                     description
@@ -49,6 +56,8 @@ export default async function handler(req: any, res: any) {
                     }
                     venue {
                       name
+                      lat
+                      lng
                     }
                     dateTime
                   }

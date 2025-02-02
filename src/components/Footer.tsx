@@ -77,12 +77,6 @@ export function Footer() {
             </Link>
             <div className="mt-3 flex gap-2">
               <Link href="#">
-                <FaXTwitter
-                  size={24}
-                  className="hover:scale-105 hover:text-red-500"
-                />
-              </Link>
-              <Link href="#">
                 <FaLinkedin
                   size={24}
                   className="hover:scale-105 hover:text-red-500"
