@@ -10,11 +10,6 @@ export const metadata: Metadata = {
     default: "YYCTech - Calgary's Tech Community",
   },
   description: "YYCTech - Calgary's Tech Community",
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
 }
 
 export default function RootLayout({

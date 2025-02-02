@@ -1,17 +1,28 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import ThemeToggle from './ThemeToggle'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+
 import NavItem from './NavItem/NavItem'
+import ThemeToggle from './ThemeToggle'
 import MobileNav from './MobileNav/MobileNav'
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
   const { resolvedTheme } = useTheme()
   const pathname = usePathname() || ''
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 0)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 bg-transparent navbar">
+    <header
+      className={`${isScrolled ? 'opacity-0' : ''} navbar fixed left-0 right-0 top-0 z-40 bg-transparent transition-all duration-500`}
+    >
       <nav className="mx-4 lg:mx-10 lg:max-w-7xl xl:mx-auto">
         <div className="flex items-center justify-between py-4">
           <Link href={'/'}>
@@ -32,7 +43,7 @@ export function Header() {
               </span>
             </p>
           </Link>
-          <div className="hidden items-center justify-end gap-0 antialiased md:flex lg:gap-1 w-full">
+          <div className="hidden w-full items-center justify-end gap-0 antialiased md:flex lg:gap-1">
             <NavItem
               pathname={pathname}
               resolvedTheme={resolvedTheme}
