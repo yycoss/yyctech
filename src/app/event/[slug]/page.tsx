@@ -55,7 +55,9 @@ const Event = async ({ params }: { params: EventParams }) => {
         <h1 className="w-full font-bold sm:text-xl lg:text-3xl">
           {event.title}
         </h1>
-        <div className="my-5 flex h-[400px] w-full flex-col gap-2 md:flex-row lg:h-[450px] lg:gap-5">
+        <div
+          className={`my-5 flex ${event?.venue?.venueType === 'online' ? 'md:h-[400px]' : 'h-[400px]'} w-full flex-col gap-2 md:flex-row lg:h-[450px] lg:gap-5`}
+        >
           <Image
             src={event.images[0]?.source ?? '/assets/images/volunteering2.jpg'}
             alt={event.title}
