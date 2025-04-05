@@ -5,18 +5,18 @@ export default async function handler(req: any, res: any) {
   
     const groupNames = [
       'pxandpints',
-      // 'calgary-game-developers',
-      // 'elixir-calgary',
-      // 'yyc-dev',
-      // 'calgary-software-crafters',
-      // 'software-developers-of-calgary',
-      // 'gdgyyc',
-      // 'the-test-tribe-calgary',
-      // 'calgaryux',
-      // 'wtd-calgary',
-      // 'civictechyyc-tech-for-good',
-      // 'hack-the-box-meetup-calgary-ca',
-      // 'tech-connect-ab',
+      'calgary-game-developers',
+      'elixir-calgary',
+      'yyc-dev',
+      'calgary-software-crafters',
+      'software-developers-of-calgary',
+      'gdgyyc',
+      'the-test-tribe-calgary',
+      'calgaryux',
+      'wtd-calgary',
+      'civictechyyc-tech-for-good',
+      'hack-the-box-meetup-calgary-ca',
+      'tech-connect-ab',
     ]
 
     // Generate the dynamic GraphQL query
