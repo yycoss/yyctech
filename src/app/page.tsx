@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <div>
       <HeroSection />
-      <TabSection communities={communities} />
+      {/* <TabSection communities={communities} /> */}
     </div>
   )
 }
