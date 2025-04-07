@@ -26,7 +26,7 @@ export const HeroSection = () => {
         </video>
       </Suspense>
       <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-28 pt-32 lg:mx-10 lg:py-0 lg:pb-48 xl:mx-auto">
-        <h1 className="max-w-2xl text-5xl font-medium leading-[1.25em] tracking-tighter text-white md:text-6xl lg:text-[6em]">
+        <h1 className="max-w-2xl text-5xl font-semibold leading-[1.25em] tracking-tighter text-white md:text-6xl lg:text-[6em]">
           Be part of
         </h1>
         <ReactTyped
@@ -39,7 +39,7 @@ export const HeroSection = () => {
           backSpeed={20}
           showCursor={true}
           cursorChar="|"
-          className="max-w-2xl text-5xl text-[2.5em] font-bold leading-[1.25em] tracking-tighter text-red-500 md:text-6xl md:text-[3.5em] lg:leading-10"
+          className="max-w-2xl text-5xl text-[3em] h-[100px] font-bold leading-[1.25em] tracking-tighter text-red-500 md:text-6xl md:text-[3.5em] lg:leading-10"
           loop
         >
           <span />

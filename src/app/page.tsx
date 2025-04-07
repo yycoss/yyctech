@@ -1,4 +1,4 @@
-import { TabSection } from '@/components/TabSection'
+import { TabSection } from '@/components/TabSection/TabSection'
 import { HeroSection } from '@/components/HeroSection'
 
 // Get Communities
@@ -24,9 +24,9 @@ export default async function Home() {
   const communities = await fetchCommunities(); // With upcoming events included in the obj
 
   return (
-    <div>
+    <>
       <HeroSection />
       <TabSection communities={communities} />
-    </div>
+    </>
   )
 }
