@@ -12,7 +12,7 @@ ui-not-selected:text-zinc-500
 dark:ui-not-selected:text-zinc-400
 mx-auto py-4
 focus:outline-none
-`;
+`
 
 export const sections = [
   {
@@ -35,4 +35,7 @@ export const sections = [
     desc: `Show your support by volunteering! Whether you’re a seasoned pro
             or just starting out, your skills can make a big impact.`,
   },
-];
+]
+
+export const tabSectionStyle =
+  'relative z-40 w-full bg-[#fafafa] md:absolute md:left-1/2 md:top-[61%] md:-translate-x-1/2 md:transform lg:top-[93%] dark:bg-zinc-900'

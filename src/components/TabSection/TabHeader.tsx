@@ -35,7 +35,7 @@ const TabHeader = ({
             >
               <FaUsers className="h-5 w-5" />
               <span>Communities</span>
-            </Tab>{' '}
+            </Tab>
             <Tab
               onClick={handleTabClick}
               className={`${tabStyle} pr-[0.2em] transition-all duration-200 hover:scale-105`}

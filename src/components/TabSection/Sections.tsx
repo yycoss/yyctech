@@ -2,6 +2,8 @@ import { TabPanel, TabPanels } from '@headlessui/react'
 
 import Events from '../Events'
 import { sections } from './util'
+import Platforms from '../Platforms'
+import Volunteering from '../Volunteering'
 
 interface SectionsProps {
   isMobile: boolean
@@ -29,7 +31,9 @@ const Sections = ({ isMobile, communities }: SectionsProps) => {
                 </p>
               )}
             </div>
-            <Events events={communities.communities} isMobile={isMobile} />
+            {index === 0 && <Events events={communities.communities} isMobile={isMobile} />}
+            {index === 1 && <Platforms groups={communities} />}
+            {index === 2 && <Volunteering />}
           </TabPanel>
         ))}
       </TabPanels>
