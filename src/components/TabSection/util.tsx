@@ -19,8 +19,8 @@ export const sections = [
     title: 'Upcoming Events 🔥',
     mobileDesc: 'Find tech events happening in Calgary.',
     desc: `Find tech events happening in Calgary. Explore opportunities to
-            connect and collaborate. If you&apos;d like to add your event to
-            our calendar please reach out to us at castanos@pm.me`,
+            connect and collaborate. If you'd like to add your event to
+            our calendar, please reach out to us at castanos@pm.me`,
   },
   {
     title: 'Join a Community 🤝',

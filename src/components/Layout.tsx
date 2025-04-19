@@ -1,14 +1,18 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({
+  children,
+  session,
+}: {
+  children: React.ReactNode
+  session: any
+}) {
   return (
     <>
       <div className="flex w-full flex-col">
-        <Header />
-        <main className="flex-auto">
-          {children}
-        </main>
+        <Header session={session} />
+        <main className="flex-auto">{children}</main>
         <Footer />
       </div>
     </>
