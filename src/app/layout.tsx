@@ -1,8 +1,9 @@
+import '@/styles/tailwind.css'
+import Script from 'next/script'
 import { type Metadata } from 'next'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-import Script from 'next/script'
-import '@/styles/tailwind.css'
+import { auth, signIn, signOut } from "@/auth";
 
 export const metadata: Metadata = {
   title: {
@@ -12,11 +13,12 @@ export const metadata: Metadata = {
   description: "YYCTech - Calgary's Tech Community",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const session = await auth();
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <Script
@@ -32,7 +34,9 @@ export default function RootLayout({
       <body className="flex h-full bg-zinc-50 dark:bg-zinc-900">
         <Providers>
           <div className="flex w-full">
-            <Layout>{children}</Layout>
+            <Layout session={session}>
+              {children}
+            </Layout>
           </div>
         </Providers>
       </body>
