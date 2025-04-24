@@ -55,7 +55,7 @@ export default function Events(events: any) {
           url: eventItem.node.shortUrl,
           description: eventItem.node.description,
           image: eventItem.node.image.source ?? '/assets/images/volunteering2.jpg',
-          venue: eventItem.node.venue.name,
+          venue: eventItem.node?.venue?.name || 'YYC',
         })
       })
     })

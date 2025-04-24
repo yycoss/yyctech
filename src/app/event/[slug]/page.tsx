@@ -47,7 +47,7 @@ async function fetchEvent(eventId: string) {
 
 const Event = async ({ params }: { params: EventParams }) => {
   const { event } = await fetchEvent(params.slug)
-  const position = { lat: event.venue.lat, lng: event.venue.lng }
+  const position = { lat: event.venue?.lat, lng: event.venue?.lng }
 
   return (
     <section className="mx-4 mt-24 flex items-center justify-center lg:mx-10 lg:max-w-7xl xl:mx-auto">
@@ -89,7 +89,7 @@ const Event = async ({ params }: { params: EventParams }) => {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <FaLocationDot className="text-red-500" />
-                {event.venue.name}
+                {event.venue?.name}
               </div>
               {event?.going && (
                 <h1 className="w-full text-start text-lg font-semibold lg:text-2xl">
