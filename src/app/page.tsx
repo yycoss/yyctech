@@ -21,12 +21,19 @@ async function fetchCommunities() {
 }
 
 export default async function Home() {
-  const communities = await fetchCommunities(); // With upcoming events included in the obj
+  // const communities = await fetchCommunities(); // With upcoming events included in the obj
 
   return (
     <>
       <HeroSection />
-      <TabSection communities={communities} />
+      {/* <TabSection communities={communities} /> */}
+
+      <div className="flex h-80 items-center justify-center bg-yellow-200 text-center text-xl text-yellow-800">
+        🚧The Meetup API version this project relies on has been deprecated.🚧
+        <br />
+        I&apos;m updating it to match the new Meetup API schema. Thanks for your
+        patience!👷
+      </div>
     </>
   )
 }
