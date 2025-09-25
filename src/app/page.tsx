@@ -31,7 +31,7 @@ export default async function Home() {
       <div className="flex h-80 items-center justify-center bg-yellow-200 text-center text-xl text-yellow-800">
         🚧The Meetup API version this project relies on has been deprecated.🚧
         <br />
-        I&apos;m updating it to match the new Meetup API schema. Thanks for your
+        I&apos;m updating it to match the new schema. Thanks for your
         patience!👷
       </div>
     </>
