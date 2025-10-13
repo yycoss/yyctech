@@ -45,16 +45,21 @@ export default function Events(events: any) {
   const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
   const getEvents = () => {
     const flatEvents: any = []
+
+    console.log('Events', events)
+
     Object.entries(events.events).map(([key, group]: any) => {
-      const { name, upcomingEvents } = group
-      upcomingEvents?.edges?.map((eventItem: any) => {
+      const { name, events } = group
+      events?.edges?.map((eventItem: any) => {
         flatEvents.push({
           community: name,
           title: eventItem.node.title,
           date: eventItem.node.dateTime,
-          url: eventItem.node.shortUrl,
+          url: eventItem.node.eventUrl,
           description: eventItem.node.description,
-          image: eventItem.node.image.source ?? '/assets/images/volunteering2.jpg',
+          image:
+            // keyGroupPhoto.baseUrl ??
+            '/assets/images/volunteering2.jpg',
           venue: eventItem.node?.venue?.name || 'YYC',
         })
       })
@@ -79,8 +84,10 @@ export default function Events(events: any) {
   }
 
   useEffect(() => {
-    getEvents();
+    getEvents()
   }, [])
+
+  // console.log('orderedEvents ->', orderedEvents)
 
   return (
     <ul
