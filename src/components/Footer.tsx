@@ -1,20 +1,19 @@
-"use client";
-import Link from "next/link";
-import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa6";
+'use client'
+import Link from 'next/link'
+import { FaXTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6'
+import { FaFacebookSquare } from 'react-icons/fa'
+import { FaArrowUp } from 'react-icons/fa6'
 import { usePathname } from 'next/navigation'
-
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    });
-  };
-  const path = usePathname();
-  const isHome = path === '/';
+      behavior: 'smooth',
+    })
+  }
+  const path = usePathname()
+  const isHome = path === '/'
 
   return (
     <footer
@@ -53,7 +52,7 @@ export function Footer() {
               <p className="text-xl font-black text-red-500 antialiased md:text-[1.75em]">
                 YYC
                 <span
-                  className="font-black text-zinc-50 antialiased"
+                  className={`font-black text-zinc-50 antialiased ${isHome ? 'text-zinc-50' : 'text-zinc-600 dark:text-zinc-50'}`}
                   style={{
                     textShadow: `
                       -0.25px -0.25px 0 #4b5563,  

@@ -6,10 +6,10 @@ import { ReactTyped } from 'react-typed'
 import { Suspense } from 'react'
 
 export const HeroSection = () => {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme()
 
   return (
-    <div className="relative flex w-full overflow-hidden lg:h-[100vh]">
+    <div className="relative flex w-full bg-gray-500/10 overflow-hidden h-[100vh]">
       <Suspense>
         <video
           src={
@@ -20,13 +20,15 @@ export const HeroSection = () => {
           autoPlay
           loop
           muted={true}
-          className={`absolute right-[10.5em] -z-10 w-full scale-[500%] md:scale-[200%] xl:scale-[130%] ${resolvedTheme !== 'dark' ? 'opacity-100' : 'opacity-70'} `}
+          className={`absolute right-[10.5em] -z-10 w-full scale-[600%] md:scale-[200%] xl:scale-[130%] ${resolvedTheme !== 'dark' ? 'opacity-100' : 'opacity-70'} `}
         >
           Your browser does not support the video tag.
         </video>
       </Suspense>
-      <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-28 pt-32 lg:mx-10 lg:py-0 lg:pb-48 xl:mx-auto">
-        <h1 className="max-w-2xl text-5xl font-semibold leading-[1.25em] tracking-tighter text-white md:text-6xl lg:text-[6em]">
+      <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col lg:justify-end gap-3 pb-28 pt-32 lg:mx-10 lg:py-0 lg:pb-48 xl:mx-auto">
+        <h1
+          className="text-shadow-lg max-w-2xl text-5xl font-semibold leading-[1.25em] tracking-tighter text-white md:text-6xl lg:text-[6em]"
+        >
           Be part of
         </h1>
         <ReactTyped
@@ -39,22 +41,26 @@ export const HeroSection = () => {
           backSpeed={20}
           showCursor={true}
           cursorChar="|"
-          className="max-w-2xl text-5xl text-[3em] h-[100px] font-bold leading-[1.25em] tracking-tighter text-red-500 md:text-6xl md:text-[3.5em] lg:leading-10"
+          className="lg:leading-20 text-shadow-lg h-[100px] max-w-2xl text-5xl text-[3em] font-bold leading-[1.25em] tracking-tighter text-red-500 md:text-6xl md:text-[3.5em]"
           loop
         >
           <span />
         </ReactTyped>
 
-        <p className="text-md ml-1 mt-6 max-w-2xl text-lg font-medium leading-[1.5em] text-white text-opacity-80 lg:text-xl">
+        <p
+          className="text-md text-shadow-lg text-shadow-lg ml-1 mt-6 max-w-2xl text-lg font-medium leading-[1.5em] text-white text-opacity-80 lg:text-xl"
+        >
           Explore events, meetups, and connect with thriving communities.{' '}
           <br className="hidden md:flex" />
           Let&apos;s build, ship, and grow together!
         </p>
-        <Link href="/newsletter">
-          <button className="mt-2 w-full rounded-full bg-white p-3 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:text-white lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:font-semibold dark:hover:text-red-500 hover:tracking-widest">
-            Stay in the Loop
-          </button>
-        </Link>
+        <span>
+          <Link href="/newsletter">
+            <button className="mt-2 w-full rounded-full bg-white p-2 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:tracking-wide hover:text-white sm:w-2/6 md:p-3 lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:font-semibold dark:hover:text-red-500">
+              Stay in the Loop
+            </button>
+          </Link>
+        </span>
       </div>
     </div>
   )
