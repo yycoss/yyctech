@@ -6,18 +6,18 @@ export default async function handler(req: any, res: any) {
 
   const groupNames = [
     'pxandpints',
-    // 'calgary-game-developers',
-    // 'elixir-calgary',
-    // 'yyc-dev',
-    // 'calgary-software-crafters',
-    // 'software-developers-of-calgary',
-    // 'gdgyyc',
-    // 'the-test-tribe-calgary',
-    // 'calgaryux',
-    // 'wtd-calgary',
-    // 'civictechyyc-tech-for-good',
-    // 'hack-the-box-meetup-calgary-ca',
-    // 'tech-connect-ab',
+    'calgary-game-developers',
+    'elixir-calgary',
+    'yyc-dev',
+    'calgary-software-crafters',
+    'software-developers-of-calgary',
+    'gdgyyc',
+    'the-test-tribe-calgary',
+    'calgaryux',
+    'wtd-calgary',
+    'civictechyyc-tech-for-good',
+    'hack-the-box-meetup-calgary-ca',
+    'tech-connect-ab',
   ]
 
   // Generate the dynamic GraphQL query
@@ -31,6 +31,10 @@ export default async function handler(req: any, res: any) {
               name
               description
               link
+              keyGroupPhoto {
+      						id
+      						baseUrl
+    					}
               events(first: 2) {
                 edges {
                   node {
@@ -81,10 +85,10 @@ export default async function handler(req: any, res: any) {
 
     const data = await response.json()
 
-      res.status(200).json(data);
+    res.status(200).json(data)
   } catch (error) {
     if (error instanceof Error) {
-        res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message })
     } else {
       res.status(500).json({ error: 'An unknown error occurred' })
     }

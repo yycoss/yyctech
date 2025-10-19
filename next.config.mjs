@@ -11,7 +11,11 @@ const nextConfig = {
     // },
   },
   images: {
-    domains: ['secure.meetupstatic.com', 'cache.sessionize.com'],
+    domains: [
+      'secure.meetupstatic.com',
+      'cache.sessionize.com',
+      'secure-content.meetupstatic.com',
+    ],
   },
 }
 

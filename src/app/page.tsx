@@ -3,7 +3,7 @@ import { HeroSection } from '@/components/HeroSection'
 
 // Get Communities
 async function fetchCommunities() {
-  const response = await fetch('https://12c05a49a5c6.ngrok-free.app/api/fetch-groups', {
+  const response = await fetch('https://yyctech.vercel.app/api/fetch-groups', {
     headers: {
       Authorization: `Bearer ACCESS TOKEN`,
     },
@@ -17,8 +17,6 @@ async function fetchCommunities() {
 
   const data = await response.json()
 
-  console.log('data ??', data)
-
   return data.data
 }
 
@@ -29,8 +27,8 @@ export default async function Home() {
     <>
       <HeroSection />
       <TabSection communities={communities} />
-      {/* 
-      <div className="flex h-80 items-center justify-center bg-yellow-200 text-center text-xl text-yellow-800">
+      
+      {/* <div className="flex h-80 items-center justify-center bg-yellow-200 text-center text-xl text-yellow-800">
         🚧The Meetup API version this project relies on has been deprecated.🚧
         <br />
         I&apos;m updating it to match the new schema. Thanks for your

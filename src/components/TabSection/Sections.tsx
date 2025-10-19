@@ -32,8 +32,8 @@ const Sections = ({ isMobile, communities }: SectionsProps) => {
               )}
             </div>
             {index === 0 && <Events events={communities.communities} isMobile={isMobile} />}
-            {/* {index === 1 && <Platforms groups={communities} />}
-            {index === 2 && <Volunteering />} */}
+            {index === 1 && <Platforms groups={communities} />}
+            {index === 2 && <Volunteering />}
           </TabPanel>
         ))}
       </TabPanels>
