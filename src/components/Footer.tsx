@@ -1,20 +1,18 @@
-"use client";
-import Link from "next/link";
-import { FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaArrowUp } from "react-icons/fa6";
+'use client'
+import Link from 'next/link'
+import { FaGithub } from 'react-icons/fa6'
+import { FaArrowUp } from 'react-icons/fa6'
 import { usePathname } from 'next/navigation'
-
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    });
-  };
-  const path = usePathname();
-  const isHome = path === '/';
+      behavior: 'smooth',
+    })
+  }
+  const path = usePathname()
+  const isHome = path === '/'
 
   return (
     <footer
@@ -75,22 +73,13 @@ export function Footer() {
                 castanos@pm.me
               </span>
             </Link>
-            <div className="mt-3 flex gap-2">
-              <Link href="#">
-                <FaLinkedin
-                  size={24}
-                  className="hover:scale-105 hover:text-red-500"
-                />
-              </Link>
-              <Link href="#">
-                <FaInstagram
-                  size={24}
-                  className="hover:scale-105 hover:text-red-500"
-                />
-              </Link>
-              <Link href="#">
-                <FaFacebookSquare
-                  size={24}
+            <div className="group mt-3 flex gap-2">
+              <h1 className="hidden text-xs group-hover:flex">
+                fork the repo👩‍💻👨🏿‍💻
+              </h1>
+              <Link href="https://github.com/yycoss/yyctech" target='_blank'>
+                <FaGithub
+                  size={32}
                   className="hover:scale-105 hover:text-red-500"
                 />
               </Link>

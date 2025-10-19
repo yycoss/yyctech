@@ -103,9 +103,10 @@ const Event = async ({ params }: { params: EventParams }) => {
                 {event.venues[0].name}{' '}
                 {event.venues[0]?.address && `@ ${event.venues[0]?.address}`}
               </div>
-              {event?.going && (
+              {event?.rsvps && (
                 <h1 className="w-full text-start text-lg font-semibold lg:text-2xl">
-                  {event?.going} confirmed attendees
+                  {event?.rsvps?.edges.length > 0 &&
+                    `${event?.rsvps?.edges.length} confirmed attendees`}
                 </h1>
               )}
             </div>
