@@ -45,16 +45,23 @@ export default function Events(events: any) {
   const [orderedEvents, setOrderedEvents] = useState<Event[]>([])
   const getEvents = () => {
     const flatEvents: any = []
+
     Object.entries(events.events).map(([key, group]: any) => {
-      const { name, upcomingEvents } = group
-      upcomingEvents?.edges?.map((eventItem: any) => {
+      const { name, events, keyGroupPhoto } = group
+      events?.edges?.map((eventItem: any) => {
         flatEvents.push({
           community: name,
           title: eventItem.node.title,
           date: eventItem.node.dateTime,
-          url: eventItem.node.shortUrl,
+          url: eventItem.node.eventUrl,
           description: eventItem.node.description,
-          image: eventItem.node.image.source ?? '/assets/images/volunteering2.jpg',
+          image:
+            eventItem?.node?.featuredEventPhoto?.baseUrl &&
+            eventItem?.node?.featuredEventPhoto?.id
+              ? `${eventItem.node.featuredEventPhoto.baseUrl}/${eventItem.node.featuredEventPhoto.id}`
+              : keyGroupPhoto?.baseUrl && keyGroupPhoto?.id
+                ? `${keyGroupPhoto.baseUrl}/${keyGroupPhoto.id}`
+                : '/assets/images/volunteering2.jpg',
           venue: eventItem.node?.venue?.name || 'YYC',
         })
       })
@@ -79,7 +86,7 @@ export default function Events(events: any) {
   }
 
   useEffect(() => {
-    getEvents();
+    getEvents()
   }, [])
 
   return (

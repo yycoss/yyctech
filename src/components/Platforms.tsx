@@ -8,7 +8,7 @@ interface Platform {
   secondaryImage: string
   briefDrescription: any
   badge: any
-  groupPhoto: any
+  keyGroupPhoto: any
   name: string
   description: string
   link: { href: string; label: string }
@@ -77,8 +77,9 @@ export default function Platforms(groups: {
             <div className="relative h-[180px] w-full overflow-hidden rounded-md">
               <Image
                 src={
-                  group[1].groupPhoto.source && !group[1].name.includes('Elixir')
-                    ? group[1].groupPhoto.source
+                  group[1].keyGroupPhoto?.baseUrl &&
+                  !group[1].name.includes('Elixir')
+                    ? `${group[1].keyGroupPhoto?.baseUrl}/${group[1].keyGroupPhoto?.id}}`
                     : group[1].secondaryImage
                 }
                 width={400}

@@ -11,43 +11,54 @@ export default async function handler(req: any, res: any) {
   }
 
   const query = `
-    query($eventId: ID) {
+   query($eventId: ID!) {
        event(id: $eventId) {
          title
          eventUrl
-         going
-         host {
-           name
-           email
-           memberPhoto {
-             source
-           }
+         rsvps {
+        	edges {
+            node {
+              id
+              member {
+                name
+              }
+            }
+          }
          }
-         venue {
-           lat
-           lng
-         }
+				eventHosts {
+  				member {
+            id
+            name
+            memberPhoto {
+              id
+              baseUrl
+            }
+          }
+  				name
+				}
+         venues{
+          id
+          name
+         	address
+         	city
+         	state
+         	postalCode
+         	venueType
+         	lat
+         	lon
+        }
          description
          dateTime
-         images {
-          source
-         }
-         venue {
-         name
-         address
-         city
-         state
-         postalCode
-         crossStreet
-         venueType
-         lat
-         lng
+         featuredEventPhoto {
+          id
+          baseUrl
          }
          group {
           name
           link
-				  logo {
-            source
+          keyGroupPhoto {
+            id
+            baseUrl
            }
          }
        }
@@ -58,7 +69,7 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const response = await fetch('https://api.meetup.com/gql', {
+    const response = await fetch('https://api.meetup.com/gql-ext', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +85,7 @@ export default async function handler(req: any, res: any) {
       )
     }
 
-    const data = await response.json()
+    const data = await response.json();
     res.status(200).json(data)
   } catch (error) {
     if (error instanceof Error) {
