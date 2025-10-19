@@ -26,7 +26,7 @@ interface EventParams {
 // Get Event
 async function fetchEvent(eventId: string) {
   const response = await fetch(
-    `https://yyctech.vercel.app/api/fetch-event?eventId=${eventId}`,
+    `https://yyctech-3lspzcek2-jrcasts-projects.vercel.app/api/fetch-event?eventId=${eventId}`,
     {
       headers: {
         Authorization: `Bearer YOUR_ACCESS_TOKEN`,
