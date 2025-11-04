@@ -133,13 +133,15 @@ export default function Events(events: any) {
                           day: 'numeric',
                           month: 'short',
                           year: 'numeric',
+                          timeZone: 'America/Denver',
+                          timeZoneName: 'short',
                         })}
                       </h3>
                     </div>
                     <div className="flex w-fit items-center gap-2">
                       <FaClock />
                       <h3 className="w-full text-sm">
-                        {event.date.split('T')[1].split('-')[0]}
+                        {event.date.split('T')[1].split('-')[0].slice(0,-3)}
                       </h3>
                     </div>
                     <div className="flex w-fit items-center gap-2">

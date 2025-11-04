@@ -74,7 +74,7 @@ const Event = async ({ params }: { params: EventParams }) => {
             height={450}
             className={`h-[200px] w-full rounded-xl object-cover shadow-md md:h-full md:w-1/2 lg:w-[60%]`}
           />
-          {event?.venues[0].venueType !== 'online' && (
+          {event?.venues[0]?.venueType !== 'online' && (
             <div className="flex flex-1 flex-col rounded-xl">
               <div className="flex-1 overflow-hidden rounded-xl">
                 {position && <LocationMap position={position} />}
@@ -90,23 +90,24 @@ const Event = async ({ params }: { params: EventParams }) => {
             <div className="flex flex-col items-start gap-2 pb-2">
               <div className="flex items-center justify-center gap-2">
                 <FaClock className="text-red-500" />
-                {new Date(event.dateTime).toLocaleDateString('en-GB', {
+                {new Date(event.dateTime).toLocaleString('en-GB', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
                   hour: '2-digit',
                   minute: '2-digit',
+                  timeZone: 'America/Denver',
+                  timeZoneName: 'short',
                 })}
               </div>
               <div className="flex items-center justify-center gap-2">
                 <FaLocationDot className="text-red-500" />
-                {event.venues[0].name}{' '}
+                {event.venues[0]?.name}{' '}
                 {event.venues[0]?.address && `@ ${event.venues[0]?.address}`}
               </div>
               {event?.rsvps && (
                 <h1 className="w-full text-start text-lg font-semibold lg:text-2xl">
-                  {event?.rsvps?.edges.length > 0 &&
-                    `${event?.rsvps?.edges.length} confirmed attendees`}
+                  {`${event.rsvps.edges.length}${event.rsvps.edges.length >= 20 ? '+' : ''} confirmed attendees`}
                 </h1>
               )}
             </div>
