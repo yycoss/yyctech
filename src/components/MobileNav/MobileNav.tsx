@@ -19,19 +19,19 @@ export default function MobileNav() {
   return (
     <div className="ml-2 md:hidden">
       <PiList
-        className="z-20 cursor-pointer text-3xl transition-transform duration-200 hover:scale-110 dark:text-white"
+        className="z-20 cursor-pointer text-3xl transition-transform duration-200 p-1 rounded-md hover:scale-110 bg-white text-black shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:text-white dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
         onClick={() => setIsOpen(!isOpen)}
-        size={36}
+        size={32}
       />
       <div
         style={{
           height: '80vh',
           transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
         }}
-        className="absolute right-0 top-0 z-40 w-[80%] border-l-[20px] border-red-500 bg-white transition-transform duration-200 ease-in-out dark:bg-[#18181b]"
+        className="absolute right-0 top-0 z-40 w-[80%] border-l-[20px] rounded-bl-2xl border-red-500 bg-white backdrop-blur-md transition-transform duration-200 ease-in-out dark:bg-[#18181b]"
       >
         <AiOutlineClose
-          className="absolute right-8 top-8 z-50 cursor-pointer text-3xl text-red-500 transition-transform duration-200 hover:scale-110"
+          className="absolute right-5 top-5 z-50 cursor-pointer text-2xl text-red-500 transition-transform duration-200 hover:scale-110"
           onClick={() => setIsOpen(false)}
         />
         <ul className="flex flex-col justify-center gap-3 p-10">

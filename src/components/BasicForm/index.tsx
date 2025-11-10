@@ -62,7 +62,7 @@ const BasicForm = () => {
           {...register('firstName', { required: 'First name is required' })}
           type="text"
           placeholder="First name"
-          className="w-full rounded-xl border border-zinc-200 p-4"
+          className="w-full rounded-lg border border-zinc-200 p-2 lg:rounded-xl lg:p-4"
         />
         {errors.firstName?.message && (
           <p className="md:text-md pl-4 text-xs">
@@ -77,7 +77,7 @@ const BasicForm = () => {
           {...register('lastName', { required: 'Last name is required' })}
           type="text"
           placeholder="Last name"
-          className="w-full rounded-xl border border-zinc-200 p-4"
+          className="w-full rounded-lg border border-zinc-200 p-2 lg:rounded-xl lg:p-4"
         />
         {errors.lastName && (
           <p className="md:text-md pl-4 text-xs">
@@ -99,7 +99,7 @@ const BasicForm = () => {
           })}
           type="email"
           placeholder="Email address"
-          className="w-full rounded-xl border border-zinc-200 p-4"
+          className="w-full rounded-lg border border-zinc-200 p-2 lg:rounded-xl lg:p-4"
         />
         {errors.email?.message && (
           <p className="md:text-md pl-4 text-xs">
@@ -111,7 +111,7 @@ const BasicForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className="dark:hover:white mt-2 w-full rounded-xl bg-red-500 p-4 font-semibold text-white shadow-sm transition-all duration-300 hover:border hover:bg-white hover:tracking-widest hover:text-white hover:text-zinc-600 lg:mt-4 dark:border dark:bg-transparent dark:hover:bg-red-500 dark:hover:font-semibold dark:hover:text-white"
+        className="dark:hover:white mt-2 w-full rounded-xl bg-red-500 p-2 lg:p-4 font-semibold text-white shadow-sm transition-all duration-300 hover:border hover:bg-white hover:tracking-wide hover:text-zinc-600 lg:mt-4 dark:border dark:bg-transparent dark:hover:bg-red-500 dark:hover:font-semibold dark:hover:text-white"
       >
         {loading ? 'Sending...' : 'Submit'}
       </button>
