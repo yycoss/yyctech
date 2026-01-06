@@ -17,7 +17,7 @@ export default async function handler(req: any, res: any) {
     'wtd-calgary',
     'civictechyyc-tech-for-good',
     'hack-the-box-meetup-calgary-ca',
-    'tech-connect-ab',
+    // 'tech-connect-ab',
   ]
 
   // Generate the dynamic GraphQL query
