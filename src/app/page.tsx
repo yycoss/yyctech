@@ -4,10 +4,11 @@ import { HeroSection } from '@/components/HeroSection'
 // Get Communities
 async function fetchCommunities() {
   const response = await fetch('https://yyctech.vercel.app/api/fetch-groups', {
+  // const response = await fetch('https://35af866a9037.ngrok-free.app/api/fetch-groups', {
     headers: {
       Authorization: `Bearer ACCESS TOKEN`,
     },
-    // next: { revalidate: 7200 }, // revalidate every 2 hours
+    next: { revalidate: 7200 }, // revalidate every 2 hours
     cache: 'no-cache',
   })
 
